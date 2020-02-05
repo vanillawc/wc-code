@@ -1,0 +1,5 @@
+.config/
+.github/
+.vscode/
+dev/
+*.tgz
