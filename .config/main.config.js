@@ -1,5 +1,5 @@
 export default {
-  input: 'src/{{name}}.js',
+  input: 'src/wc-code.js',
   output: {
     file: 'index.js',
     format: 'esm'

@@ -1,34 +1,34 @@
-<h1 align="center">&lt;{{name}}&gt; {{description}}</h1>
+<h1 align="center">&lt;wc-code&gt; run code in the browser</h1>
 
 <div align="center">
-  <a href="https://github.com/vanillawc/{{name}}/releases"><img src="https://badgen.net/github/tag/vanillawc/{{name}}" alt="GitHub Releases"></a>
-  <a href="https://www.npmjs.com/package/@vanillawc/{{name}}"><img src="https://badgen.net/npm/v/@vanillawc/{{name}}" alt="NPM Releases"></a>
-  <a href="https://bundlephobia.com/result?p=@vanillawc/{{name}}"><img src="https://badgen.net/bundlephobia/minzip/@vanillawc/{{name}}" alt="Bundlephobia"></a>
-  <a href="https://www.webcomponents.org/element/@vanillawc/{{name}}"><img src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" alt="Published on WebComponents.org"></a>
-  <a href="https://github.com/vanillawc/{{name}}/actions"><img src="https://github.com/vanillawc/{{name}}/workflows/Latest/badge.svg" alt="Latest Status"></a>
-  <a href="https://github.com/vanillawc/{{name}}/actions"><img src="https://github.com/vanillawc/{{name}}/workflows/Release/badge.svg" alt="Release Status"></a>
+  <a href="https://github.com/vanillawc/wc-code/releases"><img src="https://badgen.net/github/tag/vanillawc/wc-code" alt="GitHub Releases"></a>
+  <a href="https://www.npmjs.com/package/@vanillawc/wc-code"><img src="https://badgen.net/npm/v/@vanillawc/wc-code" alt="NPM Releases"></a>
+  <a href="https://bundlephobia.com/result?p=@vanillawc/wc-code"><img src="https://badgen.net/bundlephobia/minzip/@vanillawc/wc-code" alt="Bundlephobia"></a>
+  <a href="https://www.webcomponents.org/element/@vanillawc/wc-code"><img src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" alt="Published on WebComponents.org"></a>
+  <a href="https://github.com/vanillawc/wc-code/actions"><img src="https://github.com/vanillawc/wc-code/workflows/Latest/badge.svg" alt="Latest Status"></a>
+  <a href="https://github.com/vanillawc/wc-code/actions"><img src="https://github.com/vanillawc/wc-code/workflows/Release/badge.svg" alt="Release Status"></a>
 </div>
 
 ## Installation
 
 *Installation*
 ```sh
-npm i @vanillawc/{{name}}
+npm i @vanillawc/wc-code
 ```
 
 *Import from NPM*
 ```html
-<script type="module" src="node_modules/@vanillawc/{{name}}/index.js"></script>
+<script type="module" src="node_modules/@vanillawc/wc-code/index.js"></script>
 ```
 
 *Import from CDN*
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/{{name}}/index.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
 ```
 
 ## Demo
 
-Try it on [WebComponents.dev]({{link}})
+TODO: Try it on [WebComponents.dev]({{link}})
 
 
 ## Usage

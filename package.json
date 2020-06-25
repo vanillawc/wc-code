@@ -1,14 +1,17 @@
 {
-  "name": "@vanillawc/{{name}}",
+  "name": "@vanillawc/wc-code",
   "version": "0.0.0",
-  "description": "{{description}}",
+  "description": "run code in the browser for multiple programming languages !",
   "keywords": [
-    {{keywords}}
+    "code",
+    "browser",
+    "run code in browser",
+    "magic"
   ],
   "license": "MIT",
-  "author": "{{author.name}} <{{author.email}}> ({{author.website}})",
+  "author": "Aditya Shankar me@adityashankar.xyz https://adityashankar.xyz",
   "main": "index.js",
-  "repository": "https://github.com/vanillawc/{{name}}/",
+  "repository": "https://github.com/vanillawc/wc-code/",
   "scripts": {
     "start": "npx live-server --no-browser --port=5500 --open=dev",
     "lint": "esmtk lint",
@@ -27,5 +30,8 @@
     "ignore": [
       "index.js"
     ]
+  },
+  "dependencies": {
+    "@vanillawc/wc-codemirror": "^1.8.7"
   }
 }
