@@ -34,6 +34,7 @@ Attributes
 - `src` - load an external source file
 - `style` - CSS styling (default `height:100%;width:100%;`)
 - `mode` - the language you want to use
+- `theme` - the codemirror theme you want to use
 - `viewport-margin`<sup>1</sup> - sets the `viewportMargin` option of the CodeMirrror editor instance (default `10`)
 - `readonly` - sets the codemirror's "readOnly" configuration attribute to true, you may set `readonly="nocursor"` if you want to disable the cursor and not let the user copy the text inside
 
@@ -41,7 +42,9 @@ Attributes
 
 ### Basic Usage
 
-all language modes are dynamically loaded, and the css is dynamically loaded, you don't need to add any additional files for them 
+all language modes/themes are dynamically loaded, and the css is dynamically loaded, you don't need to add any additional files for them 
+
+**JavaScript example**
 
 ```html
   <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
@@ -54,6 +57,8 @@ all language modes are dynamically loaded, and the css is dynamically loaded, yo
   </wc-code>
 ```
 
+**Python Example**
+
 ```html
   <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
   <p>Python code example here</p>
@@ -65,3 +70,18 @@ all language modes are dynamically loaded, and the css is dynamically loaded, yo
     </script>
   </wc-code>
 ```
+
+**Theme Example**
+```html
+  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
+  <p>Python code example here</p>
+  <wc-code mode="python" theme="monokai">
+    <script type="wc-content">
+       a = 1
+       b = 5
+       print(a, b, a+b)
+    </script>
+  </wc-code>
+```
+
+see https://codemirror.net/theme/ for a list of supported themes
