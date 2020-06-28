@@ -26,31 +26,42 @@ npm i @vanillawc/wc-code
 <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
 ```
 
-## Demo
-
-TODO: Try it on [WebComponents.dev]({{link}})
-
-
 ## Usage
 
-<!--
 Attributes
 
-- title - the title that displays on the card
-- type - the content type ()
--->
 
-<!--
-Properties
+- `src` - load an external source file
+- `style` - CSS styling (default `height:100%;width:100%;`)
+- `mode` - the language you want to use
+- `viewport-margin`<sup>1</sup> - sets the `viewportMargin` option of the CodeMirrror editor instance (default `10`)
+- `readonly` - sets the codemirror's "readOnly" configuration attribute to true, you may set `readonly="nocursor"` if you want to disable the cursor and not let the user copy the text inside
 
-- title - the title that displays on the card
-- type - the content type ()
--->
+*<sup>1</sup>Setting `viewport-margin` to `infinity` will auto-resize the editor to its contents. To see this in action, check out the [CodeMirror Auto-Resize Demo](https://codemirror.net/demo/resize.html).*
 
 ### Basic Usage
 
-<!-- description -->
+all language modes are dynamically loaded, and the css is dynamically loaded, you don't need to add any additional files for them 
 
 ```html
-<!-- code sample -->
+  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
+  <wc-code mode="javascript">
+    <script type="wc-content">
+      const resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt");
+      const text = await resp.text();
+      console.log(text);
+    </script>
+  </wc-code>
+```
+
+```html
+  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
+  <p>Python code example here</p>
+  <wc-code mode="python">
+    <script type="wc-content">
+       a = 1
+       b = 5
+       print(a, b, a+b)
+    </script>
+  </wc-code>
 ```
