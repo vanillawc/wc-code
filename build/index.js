@@ -10446,28 +10446,28 @@ WCCode.WCCode = class extends WCCodeMirror {
     if (languageStuff) {
       this.language = language;
       this.setAttribute('mode', language);
-      this.loadingBar.setText("loading codemirror language file...");
+      this.loadingBar.setText('loading codemirror language file...');
       await addScriptIfRequired(languageStuff.CMLanguageLoc,
         languageDetails.metaUrl);
-      this.loadingBar.setText("loading wc-code language file...");
+      this.loadingBar.setText('loading wc-code language file...');
       await addScriptIfRequired(languageStuff.languageFile,
         languageDetails.metaUrl);
 
       if (this.languageOptions.additionalScripts) {
-        this.loadingBar.setText("loading additional required scripts...");
+        this.loadingBar.setText('loading additional required scripts...');
         await addScriptsIfRequired(this.languageOptions.additionalScripts,
             this.languageOptions.metaUrl);
       }
 
-      if(!this.languageOptions.initialized){
-        this.loadingBar.setText("initializing environment");
-        if (this.languageOptions.init){
+      if (!this.languageOptions.initialized) {
+        this.loadingBar.setText('initializing environment');
+        if (this.languageOptions.init) {
           await this.languageOptions.init();
         }
         this.languageOptions.initialized = true;
       }
 
-      this.loadingBar.setText("coding environment loading complete");
+      this.loadingBar.setText('coding environment loading complete');
 
       this.loadingBar.setDone();
 
@@ -10484,12 +10484,12 @@ WCCode.WCCode = class extends WCCodeMirror {
   /**
    * set the theme
    */
-  async setTheme(){
+  async setTheme () {
     const theme = this.getAttribute('theme');
-    if(theme){
-      const base = "https://codemirror.net/theme/";
-      const url = base + theme + ".css";
-      addCSSLinkIfRequired(url ,import.meta.url);
+    if (theme) {
+      const base = 'https://codemirror.net/theme/';
+      const url = base + theme + '.css';
+      addCSSLinkIfRequired(url, import.meta.url);
     }
   }
 
@@ -10523,15 +10523,15 @@ WCCode.WCCode = class extends WCCodeMirror {
   /**
    * add the loading bar
    */
-  addLoadingBar(){
+  addLoadingBar () {
     this.loadingBar = {
-      elements : {
-        p : document.createElement('p')
+      elements: {
+        p: document.createElement('p')
       },
-      setText(text){
+      setText (text) {
         this.elements.p.innerText = text;
       },
-      setDone(){
+      setDone () {
         this.elements.p.classList.remove('wc-code-loading-bar-loading');
         this.elements.p.classList.add('wc-code-loading-bar-done');
       }
@@ -10541,7 +10541,7 @@ WCCode.WCCode = class extends WCCodeMirror {
     p.classList.add('wc-code-loading-bar');
     p.classList.add('wc-code-loading-bar-loading');
 
-    this.loadingBar.setText("loading...");
+    this.loadingBar.setText('loading...');
     this.appendChild(p);
   }
 
@@ -10571,10 +10571,10 @@ WCCode.WCCode = class extends WCCodeMirror {
    * download the code
    */
   download () {
-    const a = document.createElement("a");
+    const a = document.createElement('a');
     const ext = this.languageOptions.fileExt;
-    const filename = this.getAttribute("file-name")||("code-file" + ext);
-    const file = new File([this.value], filename, {type: "text/plain"});
+    const filename = this.getAttribute('file-name') || ('code-file' + ext);
+    const file = new File([this.value], filename, { type: 'text/plain' });
     a.href = URL.createObjectURL(file);
     a.download = filename;
     a.click();

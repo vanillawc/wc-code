@@ -18,12 +18,12 @@ npm i @vanillawc/wc-code
 
 *Import from NPM*
 ```html
-<script type="module" src="node_modules/@vanillawc/wc-code/index.js"></script>
+<script type="module" src="node_modules/@vanillawc/wc-code/build/index.js"></script>
 ```
 
 *Import from CDN*
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/build/index.js"></script>
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 **JavaScript example**
 
 ```html
-  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/build/index.js"></script>
   <wc-code mode="javascript">
     <script type="wc-content">
       const resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt");
@@ -61,7 +61,7 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 **Python Example**
 
 ```html
-  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/build/index.js"></script>
   <p>Python code example here</p>
   <wc-code mode="python">
     <script type="wc-content">
@@ -74,7 +74,7 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 
 **Theme Example**
 ```html
-  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/index.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/build/index.js"></script>
   <p>Python code example here</p>
   <wc-code mode="python" theme="monokai">
     <script type="wc-content">
