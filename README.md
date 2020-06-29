@@ -35,6 +35,7 @@ Attributes
 - `style` - CSS styling (default `height:100%;width:100%;`)
 - `mode` - the language you want to use
 - `theme` - the codemirror theme you want to use
+- `file-name` - this will be the file name used when the file is downloaded
 - `viewport-margin`<sup>1</sup> - sets the `viewportMargin` option of the CodeMirrror editor instance (default `10`)
 - `readonly` - sets the codemirror's "readOnly" configuration attribute to true, you may set `readonly="nocursor"` if you want to disable the cursor and not let the user copy the text inside
 
