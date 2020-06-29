@@ -74,10 +74,12 @@ WCCode.WCCode = class extends WCCodeMirror {
             this.languageOptions.metaUrl)
       }
 
-      this.loadingBar.setText("initializing environment")
-
-      if (this.languageOptions.init){
-        await this.languageOptions.init()
+      if(!this.languageOptions.initialized){
+        this.loadingBar.setText("initializing environment")
+        if (this.languageOptions.init){
+          await this.languageOptions.init()
+        }
+        this.languageOptions.initialized = true;
       }
 
       this.loadingBar.setText("coding environment loading complete");
@@ -185,15 +187,12 @@ WCCode.WCCode = class extends WCCodeMirror {
    */
   download () {
     const a = document.createElement("a")
-    const file = new File([this.value], "code-file", {type: "text/plain"})
+    const ext = this.languageOptions.fileExt;
+    const filename = this.getAttribute("file-name")||("code-file" + ext)
+    const file = new File([this.value], filename, {type: "text/plain"})
     a.href = URL.createObjectURL(file)
-    a.download = "code-file" + this.languageOptions.fileExt;
-    const event = new MouseEvent('click', {
-      view: window,
-      bubbles: false,
-      cancelable: true
-    });
-    a.click();
+    a.download = filename;
+    a.click()
   }
 }
 
