@@ -1,6 +1,6 @@
 {
   "name": "@vanillawc/wc-code",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "run code in the browser for multiple programming languages !",
   "keywords": [
     "code",
