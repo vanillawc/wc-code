@@ -1,5 +1,5 @@
 /* eslint no-undef: 0 */
-import { WCCodeMirror } from '../../node_modules/@vanillawc/wc-codemirror/index.js'
+import { WCCodeMirror } from '../node_modules/@vanillawc/wc-codemirror/index.js'
 import WCCodeConsole from './console.js'
 import languageDetails from './language-details.js'
 import * as Utils from './utils.js'
