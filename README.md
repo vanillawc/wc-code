@@ -26,6 +26,10 @@ npm i @vanillawc/wc-code
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0/build/index.js"></script>
 ```
+## Usage NOTE
+
+`wc-code` requires the use of `<!DOCTYPE html>` don't ask me why, ask the forgotten html God of proscii
+
 
 ## Usage
 
@@ -49,41 +53,54 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 **JavaScript example**
 
 ```html
-  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/build/index.js"></script>
+<!DOCTYPE html>
+<head>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0.2.1/build/index.min.js"></script>
+</head>
+<body>
   <wc-code mode="javascript">
     <script type="wc-content">
       const resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt");
       const text = await resp.text();
       console.log(text);
     </script>
-  </wc-code>
+  </wc-code>                                                                                         
+</body>
 ```
 
 **Python Example**
 
 ```html
-  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/build/index.js"></script>
-  <p>Python code example here</p>
+<!DOCTYPE html>
+<head>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0.2.1/build/index.min.js"></script>
+</head>
+<body>
   <wc-code mode="python">
     <script type="wc-content">
        a = 1
-       b = 5
-       print(a, b, a+b)
+       b = 1
+       print(a+b)
     </script>
-  </wc-code>
+  </wc-code>                                                                                         
+</body>
 ```
 
 **Theme Example**
 ```html
-  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code/build/index.js"></script>
-  <p>Python code example here</p>
+<!DOCTYPE html>
+<head>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0.2.1/build/index.min.js"></script>
+</head>
+<body>
   <wc-code mode="python" theme="monokai">
     <script type="wc-content">
        a = 1
-       b = 5
-       print(a, b, a+b)
+       b = 1
+       print(a+b)
     </script>
-  </wc-code>
+  </wc-code>                                                                                         
+</body>
 ```
 
 see https://codemirror.net/theme/ for a list of supported themes
