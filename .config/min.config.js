@@ -8,7 +8,7 @@ export default {
     format: 'esm'
   },
   plugins: [terser(), copy({
-    targets: [{src: 'src/languages', dest: 'build'},
+    targets: [{src: 'src/languages/python', dest: 'build'},
               {src: 'src/wc-code.css', dest: 'build'}],
   })]
 };

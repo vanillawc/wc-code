@@ -14,7 +14,7 @@ export default {
     },
     python: {
       CMLanguageLoc: ModesBaseLoc + 'python/python.js',
-      languageFile: './languages/python.js'
+      languageFile: './languages/python/python.js'
     }
   }
 }

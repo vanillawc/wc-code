@@ -15,9 +15,10 @@
   "scripts": {
     "start": "npx live-server --no-browser --port=5500 --open=dev",
     "lint": "esmtk lint",
-    "build": "npm run build:main && npm run build:min",
+    "build": "npm run build:main && npm run build:min && npm run build:lang-js",
     "build:main": "npx rollup --config .config/main.config.js",
     "build:min": "npx rollup --config .config/min.config.js",
+    "build:lang-js": "npx rollup --config .config/languages/javascript.js.config.js",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm run lint",
     "postversion": "git push --follow-tags"
@@ -33,6 +34,8 @@
     ]
   },
   "dependencies": {
-    "@vanillawc/wc-codemirror": "^1.8.7"
+    "@vanillawc/wc-codemirror": "^1.8.7",
+    "acorn": "^7.3.1",
+    "acorn-walk": "^7.2.0"
   }
 }
