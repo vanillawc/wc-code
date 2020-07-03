@@ -1,7 +1,7 @@
 export default {
   input: 'src/languages/javascript.js',
   output: {
-    file: 'build/languages/javascipt.js',
+    file: 'build/languages/javascript.js',
     format: 'esm'
   }
 };

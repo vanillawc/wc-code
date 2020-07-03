@@ -10251,87 +10251,6 @@ class WCCodeMirror extends HTMLElement {
 
 customElements.define('wc-codemirror', WCCodeMirror);
 
-const WCCode$1 = {
-  zones: {
-    __nextZoneID: 0,
-    zones : {},
-    get(id){return this.zones[id]},
-    save(zone){
-      const zoneID = this.__nextZoneID;
-      this.__nextZoneID++;
-      this.zones[zoneID] = zone;
-      return zoneID
-    },
-  },
-  languages: {},
-};
-
-window.WCCode = WCCode$1;
-
-/**
- * code zones are zones where the code runs,
- * these are supposed to be completely seperate interpreters
- * that don't share variables with other zones
- */
-class CodeZone{
-  constructor(){
-    // needs to be set by the interpreter
-    this.interpreter = undefined;
-    this.console = undefined;
-    this.zoneId = WCCode$1.zones.save(this);
-  }
-
-  /**
-   * set the current interpreter
-   */
-  setInterpreter(interpreter){
-    this.interpreter = interpreter;
-  }
-
-  /**
-   * set the currest console
-   */
-  setConsole(_console){
-    this.console = _console;
-  }
-
-  /**
-   * run code in the zone
-   */
-  run(code){
-    this.interpreter.run(code);
-  }
-}
-
-/**
- * the wc-code-zone element
- */
-class WCCodeZone extends HTMLElement{
-  constructor(){
-    super();
-    this.language = this.getAttribute("mode");
-    this.zone = new CodeZone();
-    this.initalized = false;
-    this.elements = {};
-  }
-
-  init(){
-    const language = WCCode.languages[this.language];
-    this.zone.setInterpreter(new language.Interpreter(this.zone));
-    this.initalized = true;
-  }
-
-  get wccodes(){
-    return this.getElementsByTagName("wc-code")
-  }
-
-  run(){
-    this.zone.run();
-  }
-}
-
-customElements.define("wc-code-zone", WCCodeZone);
-
 // the contains code for the output console
 
 class WCCodeConsole {
@@ -10405,6 +10324,88 @@ var languageDetails = {
   }
 };
 
+const WCCode$1 = {
+  zones: {
+    __nextZoneID: 0,
+    zones: {},
+    get (id) { return this.zones[id] },
+    save (zone) {
+      const zoneID = this.__nextZoneID;
+      this.__nextZoneID++;
+      this.zones[zoneID] = zone;
+      return zoneID
+    }
+  },
+  languages: {}
+};
+
+window.WCCode = WCCode$1;
+
+/**
+ * code zones are zones where the code runs,
+ * these are supposed to be completely seperate interpreters
+ * that don't share variables with other zones
+ */
+class CodeZone {
+  constructor () {
+    // needs to be set by the interpreter
+    this.interpreter = undefined;
+    this.console = undefined;
+    this.zoneId = WCCode$1.zones.save(this);
+  }
+
+  /**
+   * set the current interpreter
+   */
+  setInterpreter (interpreter) {
+    this.interpreter = interpreter;
+  }
+
+  /**
+   * set the currest console
+   */
+  setConsole (_console) {
+    this.console = _console;
+  }
+
+  /**
+   * run code in the zone
+   */
+  run (code) {
+    this.interpreter.run(code);
+  }
+}
+
+/* eslint no-undef: 0 */
+/**
+ * the wc-code-zone element
+ */
+class WCCodeZone extends HTMLElement {
+  constructor () {
+    super();
+    this.language = this.getAttribute('mode');
+    this.zone = new CodeZone();
+    this.initalized = false;
+    this.elements = {};
+  }
+
+  init () {
+    const language = WCCode.languages[this.language];
+    this.zone.setInterpreter(new language.Interpreter(this.zone));
+    this.initalized = true;
+  }
+
+  get wccodes () {
+    return this.getElementsByTagName('wc-code')
+  }
+
+  run () {
+    this.zone.run();
+  }
+}
+
+customElements.define('wc-code-zone', WCCodeZone);
+
 const addedScripts = {};
 const importedScripts = {};
 const addedCSSLinks = {};
@@ -10416,8 +10417,8 @@ const addedCSSLinks = {};
  */
 async function addScriptIfRequired (_url, base) {
   const url = new URL(_url, base);
-  if (addedScripts[url.href]){
-    if(addedScripts[url.href].completed){
+  if (addedScripts[url.href]) {
+    if (addedScripts[url.href].completed) {
       return
     } else {
       return await addedScripts[url.href].promise
@@ -10434,7 +10435,7 @@ async function addScriptIfRequired (_url, base) {
 
   addedScripts[url.href] = {
     promise: loaded,
-    completed: false,
+    completed: false
   };
 
   await loaded;
@@ -10450,8 +10451,8 @@ async function addScriptIfRequired (_url, base) {
 async function importScriptIfRequired (_url, base) {
   const url = new URL(_url, base);
 
-  if (importedScripts[url.href]){
-    if(importedScripts[url.href].completed){
+  if (importedScripts[url.href]) {
+    if (importedScripts[url.href].completed) {
       return
     } else {
       return await importedScripts[url.href].promise
@@ -10461,7 +10462,7 @@ async function importScriptIfRequired (_url, base) {
 
   importedScripts[url.href] = {
     promise: loaded,
-    completed: false,
+    completed: false
   };
 
   await loaded;
@@ -10474,8 +10475,8 @@ async function importScriptIfRequired (_url, base) {
  */
 async function addCSSLinkIfRequired (_url, base) {
   const url = new URL(_url, base);
-  if (addedCSSLinks[url.href]){
-    if(addedCSSLinks[url.href].completed){
+  if (addedCSSLinks[url.href]) {
+    if (addedCSSLinks[url.href].completed) {
       return
     } else {
       return await addedCSSLinks[url.href].promise
@@ -10488,11 +10489,11 @@ async function addCSSLinkIfRequired (_url, base) {
   link.setAttribute('href', url.href);
   document.body.appendChild(link);
 
-  const loaded =  new Promise(resolve => link.addEventListener('load', resolve));
+  const loaded = new Promise(resolve => link.addEventListener('load', resolve));
 
   addedCSSLinks[url.href] = {
     promise: loaded,
-    completed: false,
+    completed: false
   };
 
   await loaded;
@@ -10514,15 +10515,15 @@ async function addScriptsIfRequired (urls, base) {
  *
  * @param wccode - a wccode instance
  */
-function findParentWCCodeZone(wccode){
+function findParentWCCodeZone (wccode) {
   let parent = wccode.parentNode;
 
-  while (true){
-    if(parent === document.body){
+  while (true) {
+    if (parent === document.body) {
       return null
-    } else if(parent instanceof WCCodeZone){
+    } else if (parent instanceof WCCodeZone) {
       return parent
-    } else if(!parent){
+    } else if (!parent) {
       return null
     }
     parent = parent.parentNode;
@@ -10546,15 +10547,15 @@ WCCode$1.WCCode = class extends WCCodeMirror {
     this.elements = {};
     const inWCZone = findParentWCCodeZone(this);
 
-    if(inWCZone){
+    if (inWCZone) {
       this.parentZoneElement = inWCZone;
       this.zone = inWCZone.zone;
-      this.setAttribute("mode", this.parentZoneElement.language);
-      if(this.parentZoneElement.hasAttribute("theme")){
-        this.setAttribute("theme", 
-                          this.parentZoneElement.getAttribute("theme"));
+      this.setAttribute('mode', this.parentZoneElement.language);
+      if (this.parentZoneElement.hasAttribute('theme')) {
+        this.setAttribute('theme',
+          this.parentZoneElement.getAttribute('theme'));
       }
-    }else {
+    } else {
       this.zone = new CodeZone();
     }
 
@@ -10574,28 +10575,27 @@ WCCode$1.WCCode = class extends WCCodeMirror {
    */
   async init () {
     this.elements.run.setAttribute('disabled', '');
-    this.check_language_exists();
+    this.checkLanguageExists();
     this.language = this.getAttribute('mode');
-    await this.init_language_files();
-    await this.init_language();      
-    await this.init_interpreter();
+    await this.initLanguageFiles();
+    await this.initLanguage();
+    await this.initInterpreter();
     this.loadingBar.setText('coding environment loading complete');
     this.loadingBar.setDone();
     this.elements.run.removeAttribute('disabled');
   }
 
-  check_language_exists(){
+  checkLanguageExists () {
     const language = this.getAttribute('mode');
     const languageStuff = languageDetails.languages[language];
 
-    if(languageStuff) return;
+    if (languageStuff) return
     console.error(`wc-code: the programming language you've used - i.e. "${language}" isn't supported, sorry !`);
     console.log(this);
     console.trace();
-
   }
 
-  async init_language_files(){
+  async initLanguageFiles () {
     const language = this.language;
     const languageStuff = languageDetails.languages[language];
     this.setAttribute('mode', language);
@@ -10612,13 +10612,13 @@ WCCode$1.WCCode = class extends WCCodeMirror {
     }
   }
 
-  async init_language(){
+  async initLanguage () {
     this.loadingBar.setText('initializing language...');
-    if(!this.languageOptions.initilalized){
+    if (!this.languageOptions.initilalized) {
       // if the language has an init function,
       // init it !
-      if(this.languageOptions.init){
-        if(this.languageOptions.inited){
+      if (this.languageOptions.init) {
+        if (this.languageOptions.inited) {
           await this.languageOptions.inited;
         } else {
           this.languageOptions.inited = this.languageOptions.init();
@@ -10630,25 +10630,24 @@ WCCode$1.WCCode = class extends WCCodeMirror {
     }
   }
 
-  async init_interpreter(){
+  async initInterpreter () {
     // create the interpreter
-    if(this.parentZoneElement){
-      if(!this.parentZoneElement.initilalized) this.parentZoneElement.init();
-    }
-    else {
+    if (this.parentZoneElement) {
+      if (!this.parentZoneElement.initilalized) this.parentZoneElement.init();
+    } else {
       const interpreter = new this.languageOptions.Interpreter(this.zone);
       this.zone.setInterpreter(interpreter);
     }
 
     const interpreter = this.zone.interpreter;
 
-    /**initialize the interpreter**/
+    /** initialize the interpreter**/
     if (!interpreter.initialized) {
       this.loadingBar.setText('initializing interpreter');
 
       // if init has already been called,
       // piggyback on that and wait for it to complete
-      if(interpreter.inited){
+      if (interpreter.inited) {
         await interpreter.inited;
       } else {
         // init the code
