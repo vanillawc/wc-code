@@ -1,4 +1,4 @@
-import WCCodeZone from "./wc-code-zone.js"
+import WCCodeZone from './wc-code-zone.js'
 
 const addedScripts = {}
 const importedScripts = {}
@@ -11,10 +11,10 @@ const addedCSSLinks = {}
  */
 export async function addScriptIfRequired (_url, base) {
   const url = new URL(_url, base)
-  if (addedScripts[url.href]){
-    if(addedScripts[url.href].completed){
+  if (addedScripts[url.href]) {
+    if (addedScripts[url.href].completed) {
       return
-    } else{
+    } else {
       return await addedScripts[url.href].promise
     }
   }
@@ -29,12 +29,12 @@ export async function addScriptIfRequired (_url, base) {
 
   addedScripts[url.href] = {
     promise: loaded,
-    completed: false,
+    completed: false
   }
 
   await loaded
 
-  addedScripts[url.href].completed = true;
+  addedScripts[url.href].completed = true
 }
 
 /**
@@ -45,10 +45,10 @@ export async function addScriptIfRequired (_url, base) {
 export async function importScriptIfRequired (_url, base) {
   const url = new URL(_url, base)
 
-  if (importedScripts[url.href]){
-    if(importedScripts[url.href].completed){
+  if (importedScripts[url.href]) {
+    if (importedScripts[url.href].completed) {
       return
-    } else{
+    } else {
       return await importedScripts[url.href].promise
     }
   }
@@ -56,7 +56,7 @@ export async function importScriptIfRequired (_url, base) {
 
   importedScripts[url.href] = {
     promise: loaded,
-    completed: false,
+    completed: false
   }
 
   await loaded
@@ -69,10 +69,10 @@ export async function importScriptIfRequired (_url, base) {
  */
 export async function addCSSLinkIfRequired (_url, base) {
   const url = new URL(_url, base)
-  if (addedCSSLinks[url.href]){
-    if(addedCSSLinks[url.href].completed){
+  if (addedCSSLinks[url.href]) {
+    if (addedCSSLinks[url.href].completed) {
       return
-    } else{
+    } else {
       return await addedCSSLinks[url.href].promise
     }
   }
@@ -83,11 +83,11 @@ export async function addCSSLinkIfRequired (_url, base) {
   link.setAttribute('href', url.href)
   document.body.appendChild(link)
 
-  const loaded =  new Promise(resolve => link.addEventListener('load', resolve))
+  const loaded = new Promise(resolve => link.addEventListener('load', resolve))
 
   addedCSSLinks[url.href] = {
     promise: loaded,
-    completed: false,
+    completed: false
   }
 
   await loaded
@@ -118,15 +118,15 @@ export async function addCSSLinksIfRequired (urls, base) {
  *
  * @param wccode - a wccode instance
  */
-export function findParentWCCodeZone(wccode){
+export function findParentWCCodeZone (wccode) {
   let parent = wccode.parentNode
 
-  while (true){
-    if(parent === document.body){
+  while (true) {
+    if (parent === document.body) {
       return null
-    } else if(parent instanceof WCCodeZone){
+    } else if (parent instanceof WCCodeZone) {
       return parent
-    } else if(!parent){
+    } else if (!parent) {
       return null
     }
     parent = parent.parentNode

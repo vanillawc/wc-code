@@ -1,3 +1,4 @@
+/* eslint no-undef: 0 */
 /**
  * creates a variable _pyodide_scopes, which contains
  * the variables in various scopes
@@ -5,7 +6,7 @@
  * so the thing is dicts created using globals()
  * auto update themselves, and we don't want that
  */
-export function init(){
+export function init () {
   pyodide.runPython(`\
   import copy
   pyodide_scopes = {
@@ -31,8 +32,8 @@ export function init(){
  * interpreters, its still one interpreter running, with its global
  * variables removed
  */
-export class SubInterpreter{
-  init(){
+export class SubInterpreter {
+  init () {
     this.pyodide = pyodide
     const code = `pyodide_scopes['next_scope_number'] += 1
 pyodide_scopes['next_scope_number'] - 1`
@@ -42,7 +43,7 @@ pyodide_scopes['next_scope_number'] - 1`
   /**
    * set as current interpreter
    */
-  setAsCurrentInterpreter(){
+  setAsCurrentInterpreter () {
     return pyodide.runPython(`
 # if there is a current scope present
 # transfer all of its variables in the current
@@ -69,14 +70,15 @@ if curr_scope and curr_scope != new_scope:
 pyodide_scopes['current_scope'] = new_scope
 del new_scope
 del curr_scope
-`)}
+`)
+  }
 
   /**
    * run code in the current interpreter,
    * a function more for helpfulness
    */
-  run(code){
-    this.setAsCurrentInterpreter();
-    pyodide.runPython(code);
+  run (code) {
+    this.setAsCurrentInterpreter()
+    pyodide.runPython(code)
   }
 }

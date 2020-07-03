@@ -13,8 +13,8 @@ WCCode.languages.python = {
   async init () {
     await languagePluginLoader
     await pyodide.loadPackage(['micropip'])
-    this.subInterpreters = await import("./python-subinterpreters.js")
-    this.subInterpreters.init();
+    this.subInterpreters = await import('./python-subinterpreters.js')
+    this.subInterpreters.init()
   },
   /**
    * @param webcomponent - the webcomponent
@@ -30,23 +30,23 @@ def print(*val):
 
 ${webcomponent.value}`)
   },
-  Interpreter: class{
-    constructor(zone){
+  Interpreter: class {
+    constructor (zone) {
       const language = WCCode.languages.python
       this.zone = zone
       this.subInterpreter = new language.subInterpreters.SubInterpreter()
     }
 
-    async init(){
+    async init () {
       await this.subInterpreter.init()
     }
 
-    run(code){
+    run (code) {
       this.set_print_fn()
       this.subInterpreter.run(code)
     }
 
-    set_print_fn(){
+    set_print_fn () {
       pyodide.runPython(`
 def print(*args):
     from js import WCCode

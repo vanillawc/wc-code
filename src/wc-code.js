@@ -1,11 +1,10 @@
 /* eslint no-undef: 0 */
 import { WCCodeMirror } from '../node_modules/@vanillawc/wc-codemirror/index.js'
-import WCCodeZone from "./wc-code-zone.js"
 import WCCodeConsole from './console.js'
 import languageDetails from './language-details.js'
 import * as Utils from './utils.js'
 import CodeZone from './zone.js'
-import WCCode from "./main.js"
+import WCCode from './main.js'
 
 Utils.addCSSLinkIfRequired('./wc-code.css', import.meta.url)
 
@@ -22,16 +21,16 @@ WCCode.WCCode = class extends WCCodeMirror {
     this.elements = {}
     const inWCZone = Utils.findParentWCCodeZone(this)
 
-    if(inWCZone){
-      this.parentZoneElement = inWCZone;
-      this.zone = inWCZone.zone;
-      this.setAttribute("mode", this.parentZoneElement.language)
-      if(this.parentZoneElement.hasAttribute("theme")){
-        this.setAttribute("theme", 
-                          this.parentZoneElement.getAttribute("theme"))
+    if (inWCZone) {
+      this.parentZoneElement = inWCZone
+      this.zone = inWCZone.zone
+      this.setAttribute('mode', this.parentZoneElement.language)
+      if (this.parentZoneElement.hasAttribute('theme')) {
+        this.setAttribute('theme',
+          this.parentZoneElement.getAttribute('theme'))
       }
-    }else{
-      this.zone = new CodeZone();
+    } else {
+      this.zone = new CodeZone()
     }
 
     this.addLoadingBar()
@@ -50,28 +49,27 @@ WCCode.WCCode = class extends WCCodeMirror {
    */
   async init () {
     this.elements.run.setAttribute('disabled', '')
-    this.check_language_exists();
+    this.checkLanguageExists()
     this.language = this.getAttribute('mode')
-    await this.init_language_files()
-    await this.init_language()      
-    await this.init_interpreter()
+    await this.initLanguageFiles()
+    await this.initLanguage()
+    await this.initInterpreter()
     this.loadingBar.setText('coding environment loading complete')
     this.loadingBar.setDone()
     this.elements.run.removeAttribute('disabled')
   }
 
-  check_language_exists(){
+  checkLanguageExists () {
     const language = this.getAttribute('mode')
     const languageStuff = languageDetails.languages[language]
 
-    if(languageStuff) return;
+    if (languageStuff) return
     console.error(`wc-code: the programming language you've used - i.e. "${language}" isn't supported, sorry !`)
     console.log(this)
     console.trace()
-
   }
 
-  async init_language_files(){
+  async initLanguageFiles () {
     const language = this.language
     const languageStuff = languageDetails.languages[language]
     this.setAttribute('mode', language)
@@ -89,45 +87,44 @@ WCCode.WCCode = class extends WCCodeMirror {
     }
   }
 
-  async init_language(){
+  async initLanguage () {
     this.loadingBar.setText('initializing language...')
-    if(!this.languageOptions.initilalized){
+    if (!this.languageOptions.initilalized) {
       // if the language has an init function,
       // init it !
-      if(this.languageOptions.init){
-        if(this.languageOptions.inited){
+      if (this.languageOptions.init) {
+        if (this.languageOptions.inited) {
           await this.languageOptions.inited
-        } else{
+        } else {
           this.languageOptions.inited = this.languageOptions.init()
           await this.languageOptions.inited
         }
       }
 
-      this.languageOptions.initialized = true;
+      this.languageOptions.initialized = true
     }
   }
 
-  async init_interpreter(){
+  async initInterpreter () {
     // create the interpreter
-    if(this.parentZoneElement){
-      if(!this.parentZoneElement.initilalized) this.parentZoneElement.init()
-    }
-    else{
+    if (this.parentZoneElement) {
+      if (!this.parentZoneElement.initilalized) this.parentZoneElement.init()
+    } else {
       const interpreter = new this.languageOptions.Interpreter(this.zone)
       this.zone.setInterpreter(interpreter)
     }
 
     const interpreter = this.zone.interpreter
 
-    /**initialize the interpreter**/
+    /** initialize the interpreter**/
     if (!interpreter.initialized) {
       this.loadingBar.setText('initializing interpreter')
 
       // if init has already been called,
       // piggyback on that and wait for it to complete
-      if(interpreter.inited){
+      if (interpreter.inited) {
         await interpreter.inited
-      } else{
+      } else {
         // init the code
         if (interpreter.init) {
           interpreter.inited = interpreter.init()
@@ -215,7 +212,7 @@ WCCode.WCCode = class extends WCCodeMirror {
    */
   run () {
     this.console.clear()
-    this.zone.setConsole(this.console);
+    this.zone.setConsole(this.console)
     this.zone.run(this.value)
   }
 

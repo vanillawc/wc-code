@@ -1,29 +1,30 @@
-import CodeZone from "./zone.js"
+/* eslint no-undef: 0 */
+import CodeZone from './zone.js'
 /**
  * the wc-code-zone element
  */
-export default class WCCodeZone extends HTMLElement{
-  constructor(){
+export default class WCCodeZone extends HTMLElement {
+  constructor () {
     super()
-    this.language = this.getAttribute("mode")
+    this.language = this.getAttribute('mode')
     this.zone = new CodeZone()
-    this.initalized = false;
+    this.initalized = false
     this.elements = {}
   }
 
-  init(){
+  init () {
     const language = WCCode.languages[this.language]
-    this.zone.setInterpreter(new language.Interpreter(this.zone));
+    this.zone.setInterpreter(new language.Interpreter(this.zone))
     this.initalized = true
   }
 
-  get wccodes(){
-    return this.getElementsByTagName("wc-code")
+  get wccodes () {
+    return this.getElementsByTagName('wc-code')
   }
 
-  run(){
+  run () {
     this.zone.run()
   }
 }
 
-customElements.define("wc-code-zone", WCCodeZone)
+customElements.define('wc-code-zone', WCCodeZone)
