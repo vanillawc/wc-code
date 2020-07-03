@@ -1,13 +1,75 @@
 <!DOCTYPE html>
 <html>
-	<head>
-    <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-codemirror@1/index.js"></script>
-	</head>
-	<body>
-    <wc-codemirror mode="javascript">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="../src/wc-code.js"></script>
+  <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+</head>
+<body>
+  <header>
+    <h1>wc-code</h1>
+    <p>cool ways to show code</p>
+  </header>
+  <article>
+    <h1>JavaScript</h1>
+    <p>JavaScript code example here</p>
+    <!-- web component examples go here -->
+    <wc-code mode="javascript" theme="blackboard" file-name="js-file.js">
       <script type="wc-content">
-        console.log("bro");
+        const resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt");
+        const text = await resp.text();
+        const [a, b, ...b2] = [1, 2, 3, 4, 5]
+        const [[c, d], [e, f]] = [[1, 2], [3, 4]]
+        const {g, h} = {g:1, h:4}
+        const {i, j, ...k} = {i:1, j:2, sdcsdc:3, dascsd: 4}
+        console.log(text);
       </script>
-    </wc-codemirror>
-	</body>
+    </wc-code>
+
+    <h1>Python</h1>
+    <p>Python code example here</p>
+    <wc-code mode="python" file-name="python-file.py">
+      <script type="wc-content">
+         a = 1
+         b = 5
+         print(a, b, a+b)
+      </script>
+    </wc-code>
+
+    <h1>Code Zones !</h1>
+    <p>javascript code zone</p>
+    <wc-code-zone mode="javascript" theme="blackboard">
+      <h2>First you get the data from the internet</h2>
+      <wc-code>
+        <script type="wc-content">
+        const resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt")
+        </script>
+      </wc-code>
+      <h2>then convert it to text</h2>
+      <wc-code>
+        <script type="wc-content">
+          const text = await resp.text()
+          console.log(text);
+        </script>
+      </wc-code>
+    </wc-code-zone>
+
+    <p>python code zone</p>
+    <wc-code-zone mode="python">
+      <wc-code>
+        <script type="wc-content">
+          a = 4
+          b = 1
+        </script>
+      </wc-code>
+      <wc-code>
+        <script type="wc-content">
+          print(a + b)
+        </script>
+      </wc-code>
+    </wc-code-zone>
+  </article>
+</body>
 </html>
