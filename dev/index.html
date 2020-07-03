@@ -18,12 +18,12 @@
     <!-- web component examples go here -->
     <wc-code mode="javascript" theme="blackboard" file-name="js-file.js">
       <script type="wc-content">
-        const resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt");
-        const text = await resp.text();
-        const [a, b, ...b2] = [1, 2, 3, 4, 5]
-        const [[c, d], [e, f]] = [[1, 2], [3, 4]]
-        const {g, h} = {g:1, h:4}
-        const {i, j, ...k} = {i:1, j:2, sdcsdc:3, dascsd: 4}
+        var resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt");
+        var text = await resp.text();
+        var [a, b, ...b2] = [1, 2, 3, 4, 5]
+        var [[c, d], [e, f]] = [[1, 2], [3, 4]]
+        var {g, h} = {g:1, h:4}
+        var {i, j, ...k} = {i:1, j:2, sdcsdc:3, dascsd: 4}
         console.log(text);
       </script>
     </wc-code>
@@ -44,13 +44,13 @@
       <h2>First you get the data from the internet</h2>
       <wc-code>
         <script type="wc-content">
-        const resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt")
+        var resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt")
         </script>
       </wc-code>
       <h2>then convert it to text</h2>
       <wc-code>
         <script type="wc-content">
-          const text = await resp.text()
+          var text = await resp.text()
           console.log(text);
         </script>
       </wc-code>
