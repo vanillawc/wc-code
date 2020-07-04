@@ -1,75 +1,122 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0.3.3/build/index.js"></script>
-  <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
-</head>
-<body>
-  <header>
-    <h1>wc-code</h1>
-    <p>cool ways to show code</p>
-  </header>
-  <article>
-    <h1>JavaScript</h1>
-    <p>JavaScript code example here</p>
-    <!-- web component examples go here -->
-    <wc-code mode="javascript" theme="blackboard" file-name="js-file.js">
-      <script type="wc-content">
-        var resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt");
-        var text = await resp.text();
-        var [a, b, ...b2] = [1, 2, 3, 4, 5]
-        var [[c, d], [e, f]] = [[1, 2], [3, 4]]
-        var {g, h} = {g:1, h:4}
-        var {i, j, ...k} = {i:1, j:2, sdcsdc:3, dascsd: 4}
-        console.log(text);
-      </script>
-    </wc-code>
-
-    <h1>Python</h1>
-    <p>Python code example here</p>
-    <wc-code mode="python" file-name="python-file.py">
-      <script type="wc-content">
-         a = 1
-         b = 5
-         print(a, b, a+b)
-      </script>
-    </wc-code>
-
-    <h1>Code Zones !</h1>
-    <p>javascript code zone</p>
-    <wc-code-zone mode="javascript" theme="blackboard">
-      <h2>First you get the data from the internet</h2>
-      <wc-code>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-markdown@1/index.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0.3.3/build/index.js"></script>
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+  </head>
+  <body>
+    <header>
+      <h1>wc-code</h1>
+      <p>cool ways to show code</p>
+    </header>
+    <article>
+      <wc-markdown>
         <script type="wc-content">
-        var resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt")
+          # Note
+          this content was written in [new.css][new-css-link]
+          and with the help of [wc-markdown][wc-markdown-link]
+          
+          [new-css-link]: https://newcss.net/
+          [wc-markdown-link]: https://github.com/vanillawc/wc-markdown
+          
+          # wc-code elements
+          `<wc-code>` elements are elements that allow you to present your
+          code with a rich feature of options
+          
+          ### Modes
+          `<wc-code>` currently supports 2 language options,
+          
+          - JavaScript
+          - Python (via the [pyodide] project)
+          
+          [pyodide]: https://github.com/iodide-project/pyodide
+          
         </script>
-      </wc-code>
-      <h2>then convert it to text</h2>
-      <wc-code>
+      </wc-markdown>
+      <h3>JavaScript usage -</h3>
+      <wc-code mode="javascript" theme="blackboard" file-name="js-file.js">
         <script type="wc-content">
-          var text = await resp.text()
+          var url = "https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt"
+          var resp = await fetch(url);
+          var text = await resp.text();
           console.log(text);
+          
         </script>
       </wc-code>
-    </wc-code-zone>
-
-    <p>python code zone</p>
-    <wc-code-zone mode="python">
-      <wc-code>
+      <h3>Python usage -</h3>
+      <p>Python code example here</p>
+      <wc-code mode="python" file-name="python-file.py">
         <script type="wc-content">
-          a = 4
-          b = 1
+          a = 1
+          b = 5
+          print(a, b, a+b)
+          
         </script>
       </wc-code>
-      <wc-code>
+      <wc-markdown highlight>
         <script type="wc-content">
-          print(a + b)
+          ### Code Zones 🛣️ !
+          
+          `<wc-code-zone>` elements share all variables between the elements
+          
+          all code zones must define a mode,
+          the contained wc-code elements, however, should not,
+          if these elements do have a mode, the mode will be ignored
+          
+          ### code example
+          
+          ```html
+          <wc-code-zone mode="python">
+            <wc-code>
+              <script mode="wc-content">
+                import numpy as np
+          
+                values = np.arange(10)
+              &lt;/script&gt;
+            </wc-code>
+              <script mode="wc-content">
+                print(values)
+              &lt;/script&gt;
+            <wc-code>
+            </wc-code>
+          </wc-code-zone>
+          ```
+          
+          
+          ### wc-code-zone examples in usage
+          the following
         </script>
-      </wc-code>
-    </wc-code-zone>
-  </article>
-</body>
+      </wc-markdown>
+      <wc-code-zone mode="javascript" theme="blackboard">
+        <p>First you get the data from the internet</p>
+        <wc-code>
+          <script type="wc-content">var resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt")</script>
+        </wc-code>
+        <p>then convert it to text</p>
+        <wc-code>
+          <script type="wc-content">
+            var text = await resp.text()
+            console.log(text);
+          </script>
+        </wc-code>
+      </wc-code-zone>
+      <p>python code zone</p>
+      <wc-code-zone mode="python">
+        <wc-code>
+          <script type="wc-content">
+            a = 4
+            b = 1
+          </script>
+        </wc-code>
+        <wc-code>
+          <script type="wc-content">print(a + b)</script>
+        </wc-code>
+      </wc-code-zone>
+    </article>
+  </body>
 </html>

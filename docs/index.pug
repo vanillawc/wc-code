@@ -1,0 +1,104 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
+    script(type='module', src='https://cdn.jsdelivr.net/gh/vanillawc/wc-markdown@1/index.js')
+    script(type='module', src='https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0.3.3/build/index.js')
+    link(rel='stylesheet', href='https://fonts.xz.style/serve/inter.css')
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css')
+    link(rel="stylesheet" href="/node_modules/@vanillawc/wc-markdown/themes/prism-okaidia.css")
+  body
+    header
+      h1 wc-code
+      p cool ways to show code
+    article
+      wc-markdown
+        script(type='wc-content').
+          # Note
+          this content was written in [new.css][new-css-link]
+          and with the help of [wc-markdown][wc-markdown-link]
+
+          [new-css-link]: https://newcss.net/
+          [wc-markdown-link]: https://github.com/vanillawc/wc-markdown
+
+          # wc-code elements
+          `<wc-code>` elements are elements that allow you to present your
+          code with a rich feature of options
+
+          ### Modes
+          `<wc-code>` currently supports 2 language options,
+
+          - JavaScript
+          - Python (via the [pyodide] project)
+
+          [pyodide]: https://github.com/iodide-project/pyodide
+
+      h3 JavaScript usage -
+      wc-code(mode='javascript', theme='blackboard', file-name='js-file.js')
+        script(type='wc-content').
+          var url = "https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt"
+          var resp = await fetch(url);
+          var text = await resp.text();
+          console.log(text);
+
+      h3 Python usage -
+      p Python code example here
+      wc-code(mode='python', file-name='python-file.py')
+        script(type='wc-content').
+          a = 1
+          b = 5
+          print(a, b, a+b)
+
+      wc-markdown(highlight)
+        script(type="wc-content").
+          ### Code Zones 🛣️ !
+
+          `<wc-code-zone>` elements share all variables between the elements
+
+          all code zones must define a mode,
+          the contained wc-code elements, however, should not,
+          if these elements do have a mode, the mode will be ignored
+
+          ### code example
+
+          ```html
+          <wc-code-zone mode="python">
+            <wc-code>
+              <script mode="wc-content">
+                import numpy as np
+
+                values = np.arange(10)
+              &lt;/script&gt;
+            </wc-code>
+              <script mode="wc-content">
+                print(values)
+              &lt;/script&gt;
+            <wc-code>
+            </wc-code>
+          </wc-code-zone>
+          ```
+
+
+          ### wc-code-zone examples in usage
+          the following
+      wc-code-zone(mode='javascript', theme='blackboard')
+        p First you get the data from the internet
+        wc-code
+          script(type='wc-content').
+            var resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt")
+        p then convert it to text
+        wc-code
+          script(type='wc-content').
+            var text = await resp.text()
+            console.log(text);
+      p python code zone
+      wc-code-zone(mode='python')
+        wc-code
+          script(type='wc-content').
+            a = 4
+            b = 1
+        wc-code
+          script(type='wc-content').
+            print(a + b)
