@@ -34,5 +34,7 @@
       "build/*"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "esmtk": "^0.4.3"
+  }
 }
