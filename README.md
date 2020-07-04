@@ -24,7 +24,13 @@ npm i @vanillawc/wc-code
 
 *Import from CDN*
 ```html
+<!-- bundled -->
 <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0/build/index.js"></script>
+
+<!-- uses relative stuff -->
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0/src/wc-code.js"></script>
+
+
 ```
 ## Usage NOTE
 

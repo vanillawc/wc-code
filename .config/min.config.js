@@ -1,5 +1,6 @@
 import { terser } from "rollup-plugin-terser";
-import copy from 'rollup-plugin-copy'
+import copy from 'rollup-plugin-copy';
+import urlResolve from 'rollup-plugin-url-resolve';
 
 export default {
   input: 'src/wc-code.js',
@@ -10,5 +11,5 @@ export default {
   plugins: [terser(), copy({
     targets: [{src: 'src/languages/python', dest: 'build/languages'},
               {src: 'src/wc-code.css', dest: 'build'}],
-  })]
+  }), urlResolve()]
 };

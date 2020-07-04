@@ -1,5 +1,5 @@
 /* eslint no-undef: 0 */
-import { WCCodeMirror } from '../node_modules/@vanillawc/wc-codemirror/index.js'
+import {WCCodeMirror} from 'https://cdn.pika.dev/@vanillawc/wc-codemirror@^1.4.1';
 import WCCodeConsole from './console.js'
 import languageDetails from './language-details.js'
 import * as Utils from './utils.js'
@@ -42,6 +42,11 @@ WCCode.WCCode = class extends WCCodeMirror {
 
   get languageOptions () {
     return WCCode.languages[this.language]
+  }
+
+  async connectedCallback(...args){
+    await super.connectedCallback(...args);
+    this.setKeyCombinations()
   }
 
   /**
@@ -146,6 +151,15 @@ WCCode.WCCode = class extends WCCodeMirror {
       const url = base + theme + '.css'
       Utils.addCSSLinkIfRequired(url, import.meta.url)
     }
+  }
+  
+
+  setKeyCombinations(){
+    this.editor.setOption("extraKeys", {
+      "Ctrl-Enter": cm => {
+        this.run()
+      }
+    })
   }
 
   /**
