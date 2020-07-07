@@ -10,17 +10,7 @@
   <a href="https://www.webcomponents.org/element/@vanillawc/wc-code"><img src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" alt="Published on WebComponents.org"></a>
 </div>
 
-## Installation
-
-*Installation*
-```sh
-npm i @vanillawc/wc-code
-```
-
-*Import from NPM*
-```html
-<script type="module" src="node_modules/@vanillawc/wc-code/build/index.js"></script>
-```
+## Usage
 
 *Import from CDN*
 ```html
@@ -29,9 +19,8 @@ npm i @vanillawc/wc-code
 
 <!-- uses relative stuff -->
 <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0/src/wc-code.js"></script>
-
-
 ```
+
 ## Usage NOTE
 
 `wc-code` requires the use of `<!DOCTYPE html>` don't ask me why, ask the forgotten html God of proscii
