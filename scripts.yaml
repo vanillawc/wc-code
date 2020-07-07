@@ -1,0 +1,9 @@
+# velociraptor scripts
+# see : https://github.com/umbopepato/velociraptor
+# scripts.yaml
+scripts:
+  start: deno run --allow-net server.ts
+  build:
+    - deno bundle src/wc-code.js > build/index.js
+    - cp -r src/languages/ build/languages/
+    - cp src/wc-code.css build/
