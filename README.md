@@ -96,6 +96,22 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 </body>
 ```
 
+**Example in pug !**
+
+**JavaScript example**
+
+```pug
+doctype html
+html(lang="en")
+  script(type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0.2.1/build/index.min.js")
+body
+  wc-code(mode="javascript" theme="monokai")
+    script(type="wc-content").
+      const resp = await fetch("https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt");
+      const text = await resp.text();
+      console.log(text);
+```
+
 see https://codemirror.net/theme/ for a list of supported themes
 
 ## Contributing
