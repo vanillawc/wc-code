@@ -13,10 +13,10 @@
 *Import from CDN*
 ```html
 <!-- bundled -->
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.1/build/index.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.2/build/index.js"></script>
 
 <!-- uses relative stuff -->
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.1/src/wc-code.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.2/src/wc-code.js"></script>
 ```
 
 ## Usage NOTE
