@@ -1,4 +1,4 @@
-import * as acorn from 'https://cdn.pika.dev/acorn@^7.1.0';
+import * as acorn from 'https://cdn.skypack.dev/acorn@%5E7.1.0';
 
 /* eslint no-undef: 0 */
 // we're running javascript in javascript
