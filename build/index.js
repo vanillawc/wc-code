@@ -98,11 +98,10 @@ let System, __instantiate;
   };
 })();
 
-System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoPvIN3SFBXCtdJm/dist=es2019/wc-codemirror", [], function (exports_1, context_1) {
+System.register("https://cdn.skypack.dev/-/@vanillawc/wc-codemirror@v1.9.1-GqvhKgAGjtvLXAh0eEZI/dist=es2020/@vanillawc/wc-codemirror", [], function (exports_1, context_1) {
     "use strict";
-    var userAgent, platform, gecko, ie_upto10, ie_11up, edge, ie, ie_version, webkit, qtwebkit, chrome, presto, safari, mac_geMountainLion, phantom, ios, android, mobile, mac, chromeOS, windows, presto_version, flipCtrlCmd, captureRightClick, rmClass, range, selectInput, Delayed, scrollerGap, Pass, sel_dontScroll, sel_mouse, sel_move, spaceStrs, nonASCIISingleCaseWordChar, extendingChars, bidiOther, bidiOrdering, noHandlers, on, dragAndDrop, zwspSupported, badBidiRects, splitLinesAuto, hasSelection, hasCopyEvent, badZoomedRects, modes4, mimeModes, modeExtensions, StringStream3, StringStream_default, SavedContext, Context, Token, sawReadOnlySpans, sawCollapsedSpans, Line, styleToClassCache, styleToClassCacheWithMode, operationGroup, orphanDelayedCallbacks, nullRect, measureText, NativeScrollbars, NullScrollbars, scrollbarModel, nextOpId, DisplayUpdate, wheelSamples, wheelPixelsPerUnit, Selection, Range, LineWidget, nextMarkerId, TextMarker, SharedTextMarker, nextDocId, Doc4, Doc_default, lastDrop, globalsRegistered, keyNames, keyMap, commands, stopSeq, lastStoppedKey, DOUBLECLICK_DELAY, PastClick, lastClick, lastDoubleClick, Init, defaults, optionHandlers, CodeMirror_default, initHooks, lastCopied, ContentEditableInput2, TextareaInput2, dontDelegate, codemirror_default, WCCodeMirror;
+    var userAgent, platform, gecko, ie_upto10, ie_11up, edge, ie, ie_version, webkit, qtwebkit, chrome, presto, safari, mac_geMountainLion, phantom, ios, android, mobile, mac, chromeOS, windows, presto_version, flipCtrlCmd, captureRightClick, rmClass, range, selectInput, Delayed, scrollerGap, Pass, sel_dontScroll, sel_mouse, sel_move, spaceStrs, nonASCIISingleCaseWordChar, extendingChars, bidiOther, bidiOrdering, noHandlers, on, dragAndDrop, zwspSupported, badBidiRects, splitLinesAuto, hasSelection, hasCopyEvent, badZoomedRects, modes4, mimeModes, modeExtensions, StringStream3, StringStream_default, SavedContext, Context, Token, sawReadOnlySpans, sawCollapsedSpans, Line, styleToClassCache, styleToClassCacheWithMode, operationGroup, orphanDelayedCallbacks, nullRect, measureText, NativeScrollbars, NullScrollbars, scrollbarModel, nextOpId, DisplayUpdate, wheelSamples, wheelPixelsPerUnit, Selection, Range, LineWidget, nextMarkerId, TextMarker, SharedTextMarker, nextDocId, Doc4, Doc_default, lastDrop, globalsRegistered, keyNames, keyMap, commands, stopSeq, lastStoppedKey, DOUBLECLICK_DELAY, PastClick, lastClick, lastDoubleClick, Init, defaults, optionHandlers, CodeMirror_default, initHooks, lastCopied, ContentEditableInput2, TextareaInput2, dontDelegate, codemirror_default, WCCodeMirror, __esModule;
     var __moduleName = context_1 && context_1.id;
-    // node_modules/codemirror/src/util/dom.js
     function classTest(cls) {
         return new RegExp("(^|\\s)" + cls + "(?:$|\\s)\\s*");
     }
@@ -168,7 +167,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 b += " " + as[i];
         return b;
     }
-    // node_modules/codemirror/src/util/misc.js
     function bind(f) {
         let args = Array.prototype.slice.call(arguments, 1);
         return function () {
@@ -292,7 +290,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 from = mid + dir;
         }
     }
-    // node_modules/codemirror/src/util/bidi.js
     function iterateBidiSections(order, from, to, f) {
         if (!order)
             return f(from, to, "ltr", 0);
@@ -542,7 +539,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
     function startState(mode, a1, a2) {
         return mode.startState ? mode.startState(a1, a2) : true;
     }
-    // node_modules/codemirror/src/line/utils_line.js
     function getLine(doc, n) {
         n -= doc.first;
         if (n < 0 || n >= doc.size)
@@ -628,7 +624,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
     function lineNumberFor(options3, i) {
         return String(options3.lineNumberFormatter(i + options3.firstLineNumber));
     }
-    // node_modules/codemirror/src/line/pos.js
     function Pos(line, ch, sticky = null) {
         if (!(this instanceof Pos))
             return new Pos(line, ch, sticky);
@@ -885,7 +880,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
     function seeCollapsedSpans() {
         sawCollapsedSpans = true;
     }
-    // node_modules/codemirror/src/line/spans.js
     function MarkedSpan(marker, from, to) {
         this.marker = marker;
         this.from = from;
@@ -1596,7 +1590,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         for (let i = 0; i < delayed.length; ++i)
             delayed[i]();
     }
-    // node_modules/codemirror/src/display/update_line.js
     function updateLineForChanges(cm, lineView, lineN, dims) {
         for (let j = 0; j < lineView.changes.length; j++) {
             let type = lineView.changes[j];
@@ -1771,7 +1764,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 node.style.marginLeft = -dims.gutterTotalWidth + "px";
         }
     }
-    // node_modules/codemirror/src/measurement/widgets.js
     function widgetHeight(widget) {
         if (widget.height != null)
             return widget.height;
@@ -1794,7 +1786,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 return true;
         }
     }
-    // node_modules/codemirror/src/measurement/position_measurement.js
     function paddingTop(display) {
         return display.lineSpace.offsetTop;
     }
@@ -2405,7 +2396,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 return i;
         }
     }
-    // node_modules/codemirror/src/display/view_tracking.js
     function regChange(cm, from, to, lendiff) {
         if (from == null)
             from = cm.doc.first;
@@ -2548,7 +2538,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         }
         return dirty;
     }
-    // node_modules/codemirror/src/display/selection.js
     function updateSelection(cm) {
         cm.display.input.showSelection(cm.display.input.prepareSelection());
     }
@@ -2694,7 +2683,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         else if (cm.options.cursorBlinkRate < 0)
             display.cursorDiv.style.visibility = "hidden";
     }
-    // node_modules/codemirror/src/display/focus.js
     function ensureFocus(cm) {
         if (!cm.state.focused) {
             cm.display.input.focus();
@@ -2742,7 +2730,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 cm.display.shift = false;
         }, 150);
     }
-    // node_modules/codemirror/src/display/update_lines.js
     function updateHeightsInViewport(cm) {
         let display = cm.display;
         let prevBottom = display.lineDiv.offsetTop;
@@ -2806,7 +2793,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         }
         return { from, to: Math.max(to, from + 1) };
     }
-    // node_modules/codemirror/src/display/scrolling.js
     function maybeScrollWindow(cm, rect) {
         if (signalDOMEvent(cm, "scrollCursorIntoView"))
             return;
@@ -2967,7 +2953,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             cm.display.scroller.scrollLeft = val;
         cm.display.scrollbars.setScrollLeft(val);
     }
-    // node_modules/codemirror/src/display/scrollbars.js
     function measureForScrollbars(cm) {
         let d = cm.display, gutterW = d.gutters.offsetWidth;
         let docH = Math.round(cm.doc.height + paddingVert(cm.display));
@@ -3213,7 +3198,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             }
         };
     }
-    // node_modules/codemirror/src/display/highlight_worker.js
     function startWorker(cm, time) {
         if (cm.doc.highlightFrontier < cm.display.viewTo)
             cm.state.highlight.set(time, bind(highlightWorker, cm));
@@ -3445,7 +3429,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         cm.display.heightForcer.style.top = measure.docHeight + "px";
         cm.display.gutters.style.height = measure.docHeight + cm.display.barHeight + scrollGap(cm) + "px";
     }
-    // node_modules/codemirror/src/display/line_numbers.js
     function alignHorizontally(cm) {
         let display = cm.display, view = display.view;
         if (!display.alignWidgets && (!display.gutters.firstChild || !cm.options.fixedGutter))
@@ -3485,7 +3468,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         }
         return false;
     }
-    // node_modules/codemirror/src/display/gutters.js
     function getGutters(gutters3, lineNumbers) {
         let result = [], sawLineNumbers = false;
         for (let i = 0; i < gutters3.length; i++) {
@@ -3528,7 +3510,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         regChange(cm);
         alignHorizontally(cm);
     }
-    // node_modules/codemirror/src/display/Display.js
     function Display(place, doc, input4, options3) {
         let d = this;
         this.input = input4;
@@ -3685,7 +3666,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
     function simpleSelection(anchor, head) {
         return new Selection([new Range(anchor, head || anchor)], 0);
     }
-    // node_modules/codemirror/src/model/change_measurement.js
     function changeEnd(change) {
         if (!change.text)
             return change.to;
@@ -3734,7 +3714,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         }
         return new Selection(out, doc.sel.primIndex);
     }
-    // node_modules/codemirror/src/display/mode_state.js
     function loadMode(cm) {
         cm.doc.mode = getMode(cm.options, cm.doc.modeOption);
         resetModeState(cm);
@@ -3752,7 +3731,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         if (cm.curOp)
             regChange(cm);
     }
-    // node_modules/codemirror/src/model/document_data.js
     function isWholeLineUpdate(doc, change) {
         return change.from.ch == 0 && change.to.ch == 0 && lst(change.text) == "" && (!doc.cm || doc.cm.options.wholeLineUpdateBefore);
     }
@@ -3848,7 +3826,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             regChange(cm);
         });
     }
-    // node_modules/codemirror/src/model/history.js
     function History(startGen) {
         this.done = [];
         this.undone = [];
@@ -4025,7 +4002,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         }
         return copy;
     }
-    // node_modules/codemirror/src/model/selection_updates.js
     function extendRange(range2, head, other, extend) {
         if (extend) {
             let anchor = range2.anchor;
@@ -4200,7 +4176,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
     function selectAll(cm) {
         cm.setSelection(Pos(cm.firstLine(), 0), Pos(cm.lastLine()), sel_dontScroll);
     }
-    // node_modules/codemirror/src/model/changes.js
     function filterChange(doc, change, update) {
         let obj = {
             canceled: false,
@@ -4495,7 +4470,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             regLineChange(doc.cm, no, changeType);
         return line;
     }
-    // node_modules/codemirror/src/model/chunk.js
     function LeafChunk(lines) {
         this.lines = lines;
         this.parent = null;
@@ -4768,7 +4742,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             cm.display.dragCursor = null;
         }
     }
-    // node_modules/codemirror/src/edit/global_events.js
     function forEachCodeMirror(f) {
         if (!document.getElementsByClassName)
             return;
@@ -4916,7 +4889,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
     function getKeyMap(val) {
         return typeof val == "string" ? keyMap[val] : val;
     }
-    // node_modules/codemirror/src/edit/deleteNearSelection.js
     function deleteNearSelection2(cm, compute) {
         let ranges = cm.doc.sel.ranges, kill = [];
         for (let i = 0; i < ranges.length; i++) {
@@ -4936,7 +4908,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             ensureCursorVisible(cm);
         });
     }
-    // node_modules/codemirror/src/input/movement.js
     function moveCharLogically(line, ch, dir) {
         let target = skipExtendingChars(line.text, ch + dir, dir);
         return target < 0 || target > line.text.length ? null : target;
@@ -5052,7 +5023,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         }
         return start;
     }
-    // node_modules/codemirror/src/edit/key_events.js
     function doHandleBinding(cm, bound, dropShift) {
         if (typeof bound == "string") {
             bound = commands[bound];
@@ -5561,7 +5531,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             return false;
         return gutterEvent(cm, e, "gutterContextMenu", false);
     }
-    // node_modules/codemirror/src/edit/utils.js
     function themeChanged(cm) {
         cm.display.wrapper.className = cm.display.wrapper.className.replace(/\s*cm-s-\S+/g, "") + cm.options.theme.replace(/(^|\s)\s*/g, " cm-s-");
         clearCaches(cm);
@@ -5731,7 +5700,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         clearCaches(cm);
         setTimeout(() => updateScrollbars(cm), 100);
     }
-    // node_modules/codemirror/src/edit/CodeMirror.js
     function CodeMirror(place, options3) {
         if (!(this instanceof CodeMirror))
             return new CodeMirror(place, options3);
@@ -5905,7 +5873,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         on(inp, "focus", (e) => onFocus(cm, e));
         on(inp, "blur", (e) => onBlur(cm, e));
     }
-    // node_modules/codemirror/src/input/indent.js
     function indentLine(cm, n, how, aggressive) {
         let doc = cm.doc, state;
         if (how == null)
@@ -6086,7 +6053,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         disableBrowserMagic(te);
         return div;
     }
-    // node_modules/codemirror/src/edit/methods.js
     function methods_default(CodeMirror6) {
         let optionHandlers2 = CodeMirror6.optionHandlers;
         let helpers = CodeMirror6.helpers = {};
@@ -6819,7 +6785,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 dist += before.textContent.length;
         }
     }
-    // node_modules/codemirror/src/edit/fromTextArea.js
     function fromTextArea(textarea, options3) {
         options3 = options3 ? copyObj(options3) : {};
         options3.value = textarea.value;
@@ -6871,7 +6836,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
         let cm = CodeMirror((node) => textarea.parentNode.insertBefore(node, textarea.nextSibling), options3);
         return cm;
     }
-    // node_modules/codemirror/src/edit/legacy.js
     function addLegacyProps(CodeMirror6) {
         CodeMirror6.off = off;
         CodeMirror6.on = on;
@@ -6918,7 +6882,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
     return {
         setters: [],
         execute: function () {
-            // node_modules/codemirror/src/util/browser.js
             userAgent = navigator.userAgent;
             platform = navigator.platform;
             gecko = /gecko\/\d/i.test(userAgent);
@@ -7168,7 +7131,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                     return direction == "rtl" ? order.reverse() : order;
                 };
             }();
-            // node_modules/codemirror/src/util/event.js
             noHandlers = [];
             on = function (emitter, type, f) {
                 if (emitter.addEventListener) {
@@ -7182,7 +7144,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                     map2[type] = (map2[type] || noHandlers).concat(f);
                 }
             };
-            // node_modules/codemirror/src/util/feature_detection.js
             dragAndDrop = function () {
                 if (ie && ie_version < 9)
                     return false;
@@ -7234,11 +7195,9 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 return typeof e.oncopy == "function";
             })();
             badZoomedRects = null;
-            // node_modules/codemirror/src/modes.js
             modes4 = {};
             mimeModes = {};
             modeExtensions = {};
-            // node_modules/codemirror/src/util/StringStream.js
             StringStream3 = class StringStream3 {
                 constructor(string, tabSize, lineOracle) {
                     this.pos = this.start = 0;
@@ -7349,7 +7308,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 }
             };
             StringStream_default = StringStream3;
-            // node_modules/codemirror/src/line/highlight.js
             SavedContext = class SavedContext {
                 constructor(state, lookAhead) {
                     this.state = state;
@@ -7407,10 +7365,8 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                     this.state = state;
                 }
             };
-            // node_modules/codemirror/src/line/saw_special_spans.js
             sawReadOnlySpans = false;
             sawCollapsedSpans = false;
-            // node_modules/codemirror/src/line/line_data.js
             Line = class Line {
                 constructor(text, markedSpans, estimateHeight2) {
                     this.text = text;
@@ -7424,7 +7380,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             eventMixin(Line);
             styleToClassCache = {};
             styleToClassCacheWithMode = {};
-            // node_modules/codemirror/src/util/operation_group.js
             operationGroup = null;
             orphanDelayedCallbacks = null;
             nullRect = { left: 0, right: 0, top: 0, bottom: 0 };
@@ -7529,9 +7484,7 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 }
             };
             scrollbarModel = { native: NativeScrollbars, null: NullScrollbars };
-            // node_modules/codemirror/src/display/operations.js
             nextOpId = 0;
-            // node_modules/codemirror/src/display/update_display.js
             DisplayUpdate = class DisplayUpdate {
                 constructor(cm, viewport, force) {
                     let display = cm.display;
@@ -7554,7 +7507,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                         signal.apply(null, this.events[i]);
                 }
             };
-            // node_modules/codemirror/src/display/scroll_events.js
             wheelSamples = 0;
             wheelPixelsPerUnit = null;
             if (ie)
@@ -7565,7 +7517,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 wheelPixelsPerUnit = -0.7;
             else if (safari)
                 wheelPixelsPerUnit = -1 / 3;
-            // node_modules/codemirror/src/model/selection.js
             Selection = class Selection {
                 constructor(ranges, primIndex) {
                     this.ranges = ranges;
@@ -7748,7 +7699,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                     }
                 }
             };
-            // node_modules/codemirror/src/model/line_widget.js
             LineWidget = class LineWidget {
                 constructor(doc, node, options3) {
                     if (options3) {
@@ -7796,7 +7746,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 }
             };
             eventMixin(LineWidget);
-            // node_modules/codemirror/src/model/mark_text.js
             nextMarkerId = 0;
             TextMarker = class TextMarker {
                 constructor(doc, type) {
@@ -7936,7 +7885,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 }
             };
             eventMixin(SharedTextMarker);
-            // node_modules/codemirror/src/model/Doc.js
             nextDocId = 0;
             Doc4 = function (text, mode, firstLine, lineSep, direction) {
                 if (!(this instanceof Doc4))
@@ -8420,10 +8368,8 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             });
             Doc4.prototype.eachLine = Doc4.prototype.iter;
             Doc_default = Doc4;
-            // node_modules/codemirror/src/edit/drop_events.js
             lastDrop = 0;
             globalsRegistered = false;
-            // node_modules/codemirror/src/input/keynames.js
             keyNames = {
                 3: "Pause",
                 8: "Backspace",
@@ -8487,7 +8433,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 keyNames[i] = String.fromCharCode(i);
             for (let i = 1; i <= 12; i++)
                 keyNames[i + 111] = keyNames[i + 63235] = "F" + i;
-            // node_modules/codemirror/src/input/keymap.js
             keyMap = {};
             keyMap.basic = {
                 Left: "goCharLeft",
@@ -8589,7 +8534,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 fallthrough: ["basic", "emacsy"]
             };
             keyMap["default"] = mac ? keyMap.macDefault : keyMap.pcDefault;
-            // node_modules/codemirror/src/edit/commands.js
             commands = {
                 selectAll,
                 singleSelection: (cm) => cm.setSelection(cm.getCursor("anchor"), cm.getCursor("head"), sel_dontScroll),
@@ -8723,7 +8667,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             };
             stopSeq = new Delayed();
             lastStoppedKey = null;
-            // node_modules/codemirror/src/edit/mouse_events.js
             DOUBLECLICK_DELAY = 400;
             PastClick = class PastClick {
                 constructor(time, pos26, button) {
@@ -8735,7 +8678,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                     return this.time + DOUBLECLICK_DELAY > time && cmp(pos26, this.pos) == 0 && button == this.button;
                 }
             };
-            // node_modules/codemirror/src/edit/options.js
             Init = { toString: function () {
                     return "CodeMirror.Init";
                 } };
@@ -8746,9 +8688,7 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             CodeMirror_default = CodeMirror;
             initHooks = [];
             CodeMirror.defineInitHook = (f) => initHooks.push(f);
-            // node_modules/codemirror/src/input/input.js
             lastCopied = null;
-            // node_modules/codemirror/src/input/ContentEditableInput.js
             ContentEditableInput2 = class ContentEditableInput2 {
                 constructor(cm) {
                     this.cm = cm;
@@ -9119,7 +9059,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 }
             };
             ContentEditableInput2.prototype.needsContentAttribute = true;
-            // node_modules/codemirror/src/input/TextareaInput.js
             TextareaInput2 = class TextareaInput2 {
                 constructor(cm) {
                     this.cm = cm;
@@ -9441,7 +9380,6 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
                 }
             };
             TextareaInput2.prototype.needsContentAttribute = false;
-            // node_modules/codemirror/src/edit/main.js
             defineOptions(CodeMirror);
             methods_default(CodeMirror);
             dontDelegate = "iter insert remove copy getEditor constructor".split(" ");
@@ -9471,9 +9409,7 @@ System.register("https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoP
             CodeMirror.fromTextArea = fromTextArea;
             addLegacyProps(CodeMirror);
             CodeMirror.version = "5.54.0";
-            // node_modules/codemirror/src/codemirror.js
             codemirror_default = CodeMirror;
-            // src/styling.js
             document.body.insertAdjacentHTML("beforeend", `
 <style>
 /* BASICS */
@@ -9827,19 +9763,41 @@ div.CodeMirror-dragcursors {
 span.CodeMirror-selectedtext { background: none; }
 </style>
 `);
-            // src/wc-codemirror.js
             self.CodeMirror = codemirror_default;
             WCCodeMirror = class WCCodeMirror extends HTMLElement {
                 static get observedAttributes() {
-                    return ["src"];
+                    return ["src", "readonly", "mode", "theme"];
                 }
                 attributeChangedCallback(name, oldValue, newValue) {
                     if (!this.__initialized) {
                         return;
                     }
                     if (oldValue !== newValue) {
-                        this[name] = newValue;
+                        if (name === "readonly") {
+                            this[name] = newValue !== null;
+                        }
+                        else {
+                            this[name] = newValue;
+                        }
                     }
+                }
+                get readonly() {
+                    return this.editor.getOption("readOnly");
+                }
+                set readonly(value) {
+                    this.editor.setOption("readOnly", value);
+                }
+                get mode() {
+                    return this.editor.getOption("mode");
+                }
+                set mode(value) {
+                    this.editor.setOption("mode", value);
+                }
+                get theme() {
+                    return this.editor.getOption("theme");
+                }
+                set theme(value) {
+                    this.editor.setOption("theme", value);
                 }
                 get src() {
                     return this.getAttribute("src");
@@ -9957,30 +9915,11 @@ span.CodeMirror-selectedtext { background: none; }
             exports_1("WCCodeMirror", WCCodeMirror);
             customElements.define("wc-codemirror", WCCodeMirror);
             exports_1("default", null);
+            exports_1("__esModule", __esModule = true);
         }
     };
 });
-/*
- *  Pika CDN - @vanillawc/wc-codemirror@1.8.10
- *  📦 https://www.pika.dev/npm/@vanillawc/wc-codemirror
- *  💁 https://www.pika.dev/cdn
- *
- *  How it works:
- *    1. Import this file directly from your project (see examples).
- *    2. The browser will automatically fetch the optimized packages from the export statements below.
- *    3. Modern browsers get faster, modern code without the unnecessary transpilation & polyfills.
- *
- *  Examples:
- *    - import {Component, render} from 'https://cdn.pika.dev/preact@^10.0.0';
- *    - import {Component, render} from 'https://cdn.pika.dev/preact@10.0.2';
- *    - import {Component, render} from 'https://cdn.pika.dev/preact@next';
- *    - import {Component, render} from 'https://cdn.pika.dev/preact';
- *    - const {Component, render} = await import('https://cdn.pika.dev/preact@^10.0.0');
- *
- *  Support for Package Exports: (Experimental - https://nodejs.org/api/esm.html#esm_package_exports)
- *    - import {useState, useRef} from 'https://cdn.pika.dev/preact@^10.0.0/hooks';
- */
-System.register("https://cdn.pika.dev/@vanillawc/wc-codemirror@^1.4.1", ["https://cdn.pika.dev/-/@vanillawc/wc-codemirror@v1.8.10-GOa6aoPvIN3SFBXCtdJm/dist=es2019/wc-codemirror"], function (exports_2, context_2) {
+System.register("https://cdn.skypack.dev/@vanillawc/wc-codemirror@%5E1.4.1", ["https://cdn.skypack.dev/-/@vanillawc/wc-codemirror@v1.9.1-GqvhKgAGjtvLXAh0eEZI/dist=es2020/@vanillawc/wc-codemirror"], function (exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
     var exportedNames_1 = {
@@ -10006,7 +9945,6 @@ System.register("https://cdn.pika.dev/@vanillawc/wc-codemirror@^1.4.1", ["https:
         }
     };
 });
-// the contains code for the output console
 System.register("file:///home/awesomewaterapple/contributions/wc-code/src/console", [], function (exports_3, context_3) {
     "use strict";
     var WCCodeConsole;
@@ -10019,11 +9957,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/consol
                     this.elements = {};
                     this.createDiv(wccode);
                 }
-                /**
-                 * creates the console div for wc-code
-                 *
-                 * @param wccode - a wc-code instance
-                 */
                 createDiv(wccode) {
                     this.elements.console = document.createElement('div');
                     this.elements.console.classList.add('wc-code-console');
@@ -10031,29 +9964,16 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/consol
                     this.elements.console.appendChild(this.elements.consoleList);
                     wccode.appendChild(this.elements.console);
                 }
-                /**
-                 * add an element inside a console,
-                 *
-                 * this will be put in an 'li' element befor being put inside
-                 *
-                 * @param el - the HTMLElement to be put inside
-                 */
                 addEl(el) {
                     const li = document.createElement('li');
                     li.appendChild(el);
                     this.elements.consoleList.appendChild(li);
                 }
-                /**
-                 * easy method to put a span element inside the console with some text inside
-                 *
-                 * @param {String} text - the text to put inside the console
-                 */
                 addText(text) {
                     const span = document.createElement('span');
                     span.innerText = text;
                     this.addEl(span);
                 }
-                /** clear the console **/
                 clear() {
                     this.elements.consoleList.innerText = '';
                 }
@@ -10123,33 +10043,18 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/zone",
             }
         ],
         execute: function () {
-            /**
-             * code zones are zones where the code runs,
-             * these are supposed to be completely seperate interpreters
-             * that don't share variables with other zones
-             */
             CodeZone = class CodeZone {
                 constructor() {
-                    // needs to be set by the interpreter
                     this.interpreter = undefined;
                     this.console = undefined;
                     this.zoneId = main_js_1.default.zones.save(this);
                 }
-                /**
-                 * set the current interpreter
-                 */
                 setInterpreter(interpreter) {
                     this.interpreter = interpreter;
                 }
-                /**
-                 * set the currest console
-                 */
                 setConsole(_console) {
                     this.console = _console;
                 }
-                /**
-                 * run code in the zone
-                 */
                 run(code) {
                     this.interpreter.run(code);
                 }
@@ -10169,9 +10074,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
             }
         ],
         execute: function () {
-            /**
-             * the wc-code-zone element
-             */
             WCCodeZone = class WCCodeZone extends HTMLElement {
                 constructor() {
                     super();
@@ -10201,11 +10103,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
     "use strict";
     var wc_code_zone_js_1, addedScripts, importedScripts, addedCSSLinks;
     var __moduleName = context_8 && context_8.id;
-    /**
-     * add a script if we need to add a script,
-     * else don't, useful for language syntax/theme additions,
-     * adding themes, stuff like that
-     */
     async function addScriptIfRequired(_url, base) {
         const url = new URL(_url, base);
         if (addedScripts[url.href]) {
@@ -10230,11 +10127,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
         addedScripts[url.href].completed = true;
     }
     exports_8("addScriptIfRequired", addScriptIfRequired);
-    /**
-     * import a script if we need to import a script,
-     * else don't, useful for language syntax/theme additions,
-     * adding themes, stuff like that
-     */
     async function importScriptIfRequired(_url, base) {
         const url = new URL(_url, base);
         if (importedScripts[url.href]) {
@@ -10254,9 +10146,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
         importedScripts[url.href].completed = true;
     }
     exports_8("importScriptIfRequired", importScriptIfRequired);
-    /**
-     * add a css link if required
-     */
     async function addCSSLinkIfRequired(_url, base) {
         const url = new URL(_url, base);
         if (addedCSSLinks[url.href]) {
@@ -10281,29 +10170,18 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
         addedCSSLinks[url.href].completed = true;
     }
     exports_8("addCSSLinkIfRequired", addCSSLinkIfRequired);
-    /**
-     * see addScriptIfRequired, this is for multiple scripts
-     */
     async function addScriptsIfRequired(urls, base) {
         for (var url of urls) {
             await addScriptIfRequired(url, base);
         }
     }
     exports_8("addScriptsIfRequired", addScriptsIfRequired);
-    /**
-     * see addCSSLinkIfRequired, this is for multiple links
-     */
     async function addCSSLinksIfRequired(urls, base) {
         for (var url of urls) {
             await addCSSLinkIfRequired(url, base);
         }
     }
     exports_8("addCSSLinksIfRequired", addCSSLinksIfRequired);
-    /**
-     * find parent wc-zone
-     *
-     * @param wccode - a wccode instance
-     */
     function findParentWCCodeZone(wccode) {
         let parent = wccode.parentNode;
         while (true) {
@@ -10333,14 +10211,14 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
         }
     };
 });
-System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-code", ["https://cdn.pika.dev/@vanillawc/wc-codemirror@^1.4.1", "file:///home/awesomewaterapple/contributions/wc-code/src/console", "file:///home/awesomewaterapple/contributions/wc-code/src/language-details", "file:///home/awesomewaterapple/contributions/wc-code/src/utils", "file:///home/awesomewaterapple/contributions/wc-code/src/zone", "file:///home/awesomewaterapple/contributions/wc-code/src/main"], function (exports_9, context_9) {
+System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-code", ["https://cdn.skypack.dev/@vanillawc/wc-codemirror@%5E1.4.1", "file:///home/awesomewaterapple/contributions/wc-code/src/console", "file:///home/awesomewaterapple/contributions/wc-code/src/language-details", "file:///home/awesomewaterapple/contributions/wc-code/src/utils", "file:///home/awesomewaterapple/contributions/wc-code/src/zone", "file:///home/awesomewaterapple/contributions/wc-code/src/main"], function (exports_9, context_9) {
     "use strict";
-    var wc_codemirror__1_4_1_1, console_js_1, language_details_js_1, Utils, zone_js_2, main_js_2;
+    var wc_codemirror__5E1_4_1_1, console_js_1, language_details_js_1, Utils, zone_js_2, main_js_2;
     var __moduleName = context_9 && context_9.id;
     return {
         setters: [
-            function (wc_codemirror__1_4_1_1_1) {
-                wc_codemirror__1_4_1_1 = wc_codemirror__1_4_1_1_1;
+            function (wc_codemirror__5E1_4_1_1_1) {
+                wc_codemirror__5E1_4_1_1 = wc_codemirror__5E1_4_1_1_1;
             },
             function (console_js_1_1) {
                 console_js_1 = console_js_1_1;
@@ -10360,13 +10238,7 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
         ],
         execute: function () {
             Utils.addCSSLinkIfRequired('./wc-code.css', context_9.meta.url);
-            /**
-             * Code, but like its magic
-             */
-            main_js_2.default.WCCode = class extends wc_codemirror__1_4_1_1.WCCodeMirror {
-                /**
-                 * create the wc-code instance
-                 */
+            main_js_2.default.WCCode = class extends wc_codemirror__5E1_4_1_1.WCCodeMirror {
                 constructor() {
                     super();
                     this.elements = {};
@@ -10395,9 +10267,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                     await super.connectedCallback(...args);
                     this.setKeyCombinations();
                 }
-                /**
-                 * set the programming language
-                 */
                 async init() {
                     this.elements.run.setAttribute('disabled', '');
                     this.checkLanguageExists();
@@ -10435,8 +10304,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                 async initLanguage() {
                     this.loadingBar.setText('initializing language...');
                     if (!this.languageOptions.initilalized) {
-                        // if the language has an init function,
-                        // init it !
                         if (this.languageOptions.init) {
                             if (this.languageOptions.inited) {
                                 await this.languageOptions.inited;
@@ -10450,7 +10317,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                     }
                 }
                 async initInterpreter() {
-                    // create the interpreter
                     if (this.parentZoneElement) {
                         if (!this.parentZoneElement.initilalized)
                             this.parentZoneElement.init();
@@ -10460,16 +10326,12 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                         this.zone.setInterpreter(interpreter);
                     }
                     const interpreter = this.zone.interpreter;
-                    /** initialize the interpreter**/
                     if (!interpreter.initialized) {
                         this.loadingBar.setText('initializing interpreter');
-                        // if init has already been called,
-                        // piggyback on that and wait for it to complete
                         if (interpreter.inited) {
                             await interpreter.inited;
                         }
                         else {
-                            // init the code
                             if (interpreter.init) {
                                 interpreter.inited = interpreter.init();
                                 await interpreter.inited;
@@ -10478,9 +10340,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                         interpreter.initialized = true;
                     }
                 }
-                /**
-                 * set the theme
-                 */
                 async setTheme() {
                     const theme = this.getAttribute('theme');
                     if (theme) {
@@ -10496,9 +10355,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                         }
                     });
                 }
-                /**
-                 * adds the run button, copy button and the download file button
-                 */
                 addButtons() {
                     this.elements.features = document.createElement('div');
                     this.elements.copy = document.createElement('input');
@@ -10518,9 +10374,6 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                     this.elements.features.appendChild(this.elements.download);
                     this.appendChild(this.elements.features);
                 }
-                /**
-                 * add the loading bar
-                 */
                 addLoadingBar() {
                     this.loadingBar = {
                         elements: {
@@ -10540,29 +10393,17 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                     this.loadingBar.setText('loading...');
                     this.appendChild(p);
                 }
-                /**
-                 * adds the code console
-                 */
                 addConsole() {
                     this.console = new console_js_1.default(this);
                 }
-                /**
-                 * run the code
-                 */
                 run() {
                     this.console.clear();
                     this.zone.setConsole(this.console);
                     this.zone.run(this.value);
                 }
-                /**
-                 * copy the code
-                 */
                 copy() {
                     navigator.clipboard.writeText(this.value);
                 }
-                /**
-                 * download the code
-                 */
                 download() {
                     const a = document.createElement('a');
                     const ext = this.languageOptions.fileExt;
