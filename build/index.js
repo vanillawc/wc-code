@@ -98,9 +98,9 @@ let System, __instantiate;
   };
 })();
 
-System.register("https://cdn.skypack.dev/-/@vanillawc/wc-codemirror@v1.9.1-GqvhKgAGjtvLXAh0eEZI/dist=es2020/@vanillawc/wc-codemirror", [], function (exports_1, context_1) {
+System.register("https://unpkg.com/@vanillawc/wc-codemirror@1.9.1/index", [], function (exports_1, context_1) {
     "use strict";
-    var userAgent, platform, gecko, ie_upto10, ie_11up, edge, ie, ie_version, webkit, qtwebkit, chrome, presto, safari, mac_geMountainLion, phantom, ios, android, mobile, mac, chromeOS, windows, presto_version, flipCtrlCmd, captureRightClick, rmClass, range, selectInput, Delayed, scrollerGap, Pass, sel_dontScroll, sel_mouse, sel_move, spaceStrs, nonASCIISingleCaseWordChar, extendingChars, bidiOther, bidiOrdering, noHandlers, on, dragAndDrop, zwspSupported, badBidiRects, splitLinesAuto, hasSelection, hasCopyEvent, badZoomedRects, modes4, mimeModes, modeExtensions, StringStream3, StringStream_default, SavedContext, Context, Token, sawReadOnlySpans, sawCollapsedSpans, Line, styleToClassCache, styleToClassCacheWithMode, operationGroup, orphanDelayedCallbacks, nullRect, measureText, NativeScrollbars, NullScrollbars, scrollbarModel, nextOpId, DisplayUpdate, wheelSamples, wheelPixelsPerUnit, Selection, Range, LineWidget, nextMarkerId, TextMarker, SharedTextMarker, nextDocId, Doc4, Doc_default, lastDrop, globalsRegistered, keyNames, keyMap, commands, stopSeq, lastStoppedKey, DOUBLECLICK_DELAY, PastClick, lastClick, lastDoubleClick, Init, defaults, optionHandlers, CodeMirror_default, initHooks, lastCopied, ContentEditableInput2, TextareaInput2, dontDelegate, codemirror_default, WCCodeMirror, __esModule;
+    var userAgent, platform, gecko, ie_upto10, ie_11up, edge, ie, ie_version, webkit, qtwebkit, chrome, presto, safari, mac_geMountainLion, phantom, ios, android, mobile, mac, chromeOS, windows, presto_version, flipCtrlCmd, captureRightClick, rmClass, range, selectInput, Delayed, scrollerGap, Pass, sel_dontScroll, sel_mouse, sel_move, spaceStrs, nonASCIISingleCaseWordChar, extendingChars, bidiOther, bidiOrdering, noHandlers, on, dragAndDrop, zwspSupported, badBidiRects, splitLinesAuto, hasSelection, hasCopyEvent, badZoomedRects, modes4, mimeModes, modeExtensions, StringStream3, StringStream_default, SavedContext, Context, Token, sawReadOnlySpans, sawCollapsedSpans, Line, styleToClassCache, styleToClassCacheWithMode, operationGroup, orphanDelayedCallbacks, nullRect, measureText, NativeScrollbars, NullScrollbars, scrollbarModel, nextOpId, DisplayUpdate, wheelSamples, wheelPixelsPerUnit, Selection, Range, LineWidget, nextMarkerId, TextMarker, SharedTextMarker, nextDocId, Doc4, Doc_default, lastDrop, globalsRegistered, keyNames, keyMap, commands, stopSeq, lastStoppedKey, DOUBLECLICK_DELAY, PastClick, lastClick, lastDoubleClick, Init, defaults, optionHandlers, CodeMirror_default, initHooks, lastCopied, ContentEditableInput2, TextareaInput2, dontDelegate, codemirror_default, WCCodeMirror;
     var __moduleName = context_1 && context_1.id;
     function classTest(cls) {
         return new RegExp("(^|\\s)" + cls + "(?:$|\\s)\\s*");
@@ -1282,6 +1282,7 @@ System.register("https://cdn.skypack.dev/-/@vanillawc/wc-codemirror@v1.9.1-GqvhK
                 lineView.measure.cache = {};
             }
             else {
+                ;
                 (lineView.measure.maps || (lineView.measure.maps = [])).push(builder.map);
                 (lineView.measure.caches || (lineView.measure.caches = [])).push({});
             }
@@ -1748,6 +1749,7 @@ System.register("https://cdn.skypack.dev/-/@vanillawc/wc-codemirror@v1.9.1-GqvhK
     }
     function positionLineWidget(widget, node, lineView, dims) {
         if (widget.noHScroll) {
+            ;
             (lineView.alignable || (lineView.alignable = [])).push(node);
             let width = dims.wrapperWidth;
             node.style.left = dims.fixedPos + "px";
@@ -3394,8 +3396,8 @@ System.register("https://cdn.skypack.dev/-/@vanillawc/wc-codemirror@v1.9.1-GqvhK
         let view = display.view, lineN = display.viewFrom;
         for (let i = 0; i < view.length; i++) {
             let lineView = view[i];
-            if (lineView.hidden)
-                ;
+            if (lineView.hidden) {
+            }
             else if (!lineView.node || lineView.node.parentNode != container) {
                 let node = buildLineElement(cm, lineView, lineN, dims);
                 container.insertBefore(node, cur);
@@ -3818,6 +3820,7 @@ System.register("https://cdn.skypack.dev/-/@vanillawc/wc-codemirror@v1.9.1-GqvhK
         regChange(cm);
     }
     function setDirectionClass(cm) {
+        ;
         (cm.doc.direction == "rtl" ? addClass : rmClass)(cm.display.lineDiv, "CodeMirror-rtl");
     }
     function directionChanged(cm) {
@@ -9914,41 +9917,13 @@ span.CodeMirror-selectedtext { background: none; }
             };
             exports_1("WCCodeMirror", WCCodeMirror);
             customElements.define("wc-codemirror", WCCodeMirror);
-            exports_1("default", null);
-            exports_1("__esModule", __esModule = true);
         }
     };
 });
-System.register("https://cdn.skypack.dev/@vanillawc/wc-codemirror@%5E1.4.1", ["https://cdn.skypack.dev/-/@vanillawc/wc-codemirror@v1.9.1-GqvhKgAGjtvLXAh0eEZI/dist=es2020/@vanillawc/wc-codemirror"], function (exports_2, context_2) {
-    "use strict";
-    var __moduleName = context_2 && context_2.id;
-    var exportedNames_1 = {
-        "default": true
-    };
-    function exportStar_1(m) {
-        var exports = {};
-        for (var n in m) {
-            if (n !== "default" && !exportedNames_1.hasOwnProperty(n)) exports[n] = m[n];
-        }
-        exports_2(exports);
-    }
-    return {
-        setters: [
-            function (wc_codemirror_js_1_1) {
-                exportStar_1(wc_codemirror_js_1_1);
-                exports_2({
-                    "default": wc_codemirror_js_1_1["default"]
-                });
-            }
-        ],
-        execute: function () {
-        }
-    };
-});
-System.register("file:///home/awesomewaterapple/contributions/wc-code/src/console", [], function (exports_3, context_3) {
+System.register("file:///home/awesomewaterapple/contributions/wc-code/src/console", [], function (exports_2, context_2) {
     "use strict";
     var WCCodeConsole;
-    var __moduleName = context_3 && context_3.id;
+    var __moduleName = context_2 && context_2.id;
     return {
         setters: [],
         execute: function () {
@@ -9978,20 +9953,20 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/consol
                     this.elements.consoleList.innerText = '';
                 }
             };
-            exports_3("default", WCCodeConsole);
+            exports_2("default", WCCodeConsole);
         }
     };
 });
-System.register("file:///home/awesomewaterapple/contributions/wc-code/src/language-details", [], function (exports_4, context_4) {
+System.register("file:///home/awesomewaterapple/contributions/wc-code/src/language-details", [], function (exports_3, context_3) {
     "use strict";
     var ModesBaseLoc;
-    var __moduleName = context_4 && context_4.id;
+    var __moduleName = context_3 && context_3.id;
     return {
         setters: [],
         execute: function () {
             ModesBaseLoc = 'https://cdn.jsdelivr.net/gh/vanillawc/wc-codemirror@1.8.7/mode/';
-            exports_4("default", {
-                metaUrl: context_4.meta.url,
+            exports_3("default", {
+                metaUrl: context_3.meta.url,
                 languages: {
                     javascript: {
                         CMLanguageLoc: ModesBaseLoc + 'javascript/javascript.js',
@@ -10006,10 +9981,10 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/langua
         }
     };
 });
-System.register("file:///home/awesomewaterapple/contributions/wc-code/src/main", [], function (exports_5, context_5) {
+System.register("file:///home/awesomewaterapple/contributions/wc-code/src/main", [], function (exports_4, context_4) {
     "use strict";
     var WCCode;
-    var __moduleName = context_5 && context_5.id;
+    var __moduleName = context_4 && context_4.id;
     return {
         setters: [],
         execute: function () {
@@ -10028,14 +10003,14 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/main",
                 languages: {}
             };
             window.WCCode = WCCode;
-            exports_5("default", WCCode);
+            exports_4("default", WCCode);
         }
     };
 });
-System.register("file:///home/awesomewaterapple/contributions/wc-code/src/zone", ["file:///home/awesomewaterapple/contributions/wc-code/src/main"], function (exports_6, context_6) {
+System.register("file:///home/awesomewaterapple/contributions/wc-code/src/zone", ["file:///home/awesomewaterapple/contributions/wc-code/src/main"], function (exports_5, context_5) {
     "use strict";
     var main_js_1, CodeZone;
-    var __moduleName = context_6 && context_6.id;
+    var __moduleName = context_5 && context_5.id;
     return {
         setters: [
             function (main_js_1_1) {
@@ -10059,14 +10034,14 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/zone",
                     this.interpreter.run(code);
                 }
             };
-            exports_6("default", CodeZone);
+            exports_5("default", CodeZone);
         }
     };
 });
-System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-code-zone", ["file:///home/awesomewaterapple/contributions/wc-code/src/zone"], function (exports_7, context_7) {
+System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-code-zone", ["file:///home/awesomewaterapple/contributions/wc-code/src/zone"], function (exports_6, context_6) {
     "use strict";
     var zone_js_1, WCCodeZone;
-    var __moduleName = context_7 && context_7.id;
+    var __moduleName = context_6 && context_6.id;
     return {
         setters: [
             function (zone_js_1_1) {
@@ -10094,15 +10069,15 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                     this.zone.run();
                 }
             };
-            exports_7("default", WCCodeZone);
+            exports_6("default", WCCodeZone);
             customElements.define('wc-code-zone', WCCodeZone);
         }
     };
 });
-System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils", ["file:///home/awesomewaterapple/contributions/wc-code/src/wc-code-zone"], function (exports_8, context_8) {
+System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils", ["file:///home/awesomewaterapple/contributions/wc-code/src/wc-code-zone"], function (exports_7, context_7) {
     "use strict";
     var wc_code_zone_js_1, addedScripts, importedScripts, addedCSSLinks;
-    var __moduleName = context_8 && context_8.id;
+    var __moduleName = context_7 && context_7.id;
     async function addScriptIfRequired(_url, base) {
         const url = new URL(_url, base);
         if (addedScripts[url.href]) {
@@ -10126,7 +10101,7 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
         await loaded;
         addedScripts[url.href].completed = true;
     }
-    exports_8("addScriptIfRequired", addScriptIfRequired);
+    exports_7("addScriptIfRequired", addScriptIfRequired);
     async function importScriptIfRequired(_url, base) {
         const url = new URL(_url, base);
         if (importedScripts[url.href]) {
@@ -10137,7 +10112,7 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
                 return await importedScripts[url.href].promise;
             }
         }
-        const loaded = context_8.import(url.href);
+        const loaded = context_7.import(url.href);
         importedScripts[url.href] = {
             promise: loaded,
             completed: false
@@ -10145,7 +10120,7 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
         await loaded;
         importedScripts[url.href].completed = true;
     }
-    exports_8("importScriptIfRequired", importScriptIfRequired);
+    exports_7("importScriptIfRequired", importScriptIfRequired);
     async function addCSSLinkIfRequired(_url, base) {
         const url = new URL(_url, base);
         if (addedCSSLinks[url.href]) {
@@ -10169,19 +10144,19 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
         await loaded;
         addedCSSLinks[url.href].completed = true;
     }
-    exports_8("addCSSLinkIfRequired", addCSSLinkIfRequired);
+    exports_7("addCSSLinkIfRequired", addCSSLinkIfRequired);
     async function addScriptsIfRequired(urls, base) {
         for (var url of urls) {
             await addScriptIfRequired(url, base);
         }
     }
-    exports_8("addScriptsIfRequired", addScriptsIfRequired);
+    exports_7("addScriptsIfRequired", addScriptsIfRequired);
     async function addCSSLinksIfRequired(urls, base) {
         for (var url of urls) {
             await addCSSLinkIfRequired(url, base);
         }
     }
-    exports_8("addCSSLinksIfRequired", addCSSLinksIfRequired);
+    exports_7("addCSSLinksIfRequired", addCSSLinksIfRequired);
     function findParentWCCodeZone(wccode) {
         let parent = wccode.parentNode;
         while (true) {
@@ -10197,7 +10172,7 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
             parent = parent.parentNode;
         }
     }
-    exports_8("findParentWCCodeZone", findParentWCCodeZone);
+    exports_7("findParentWCCodeZone", findParentWCCodeZone);
     return {
         setters: [
             function (wc_code_zone_js_1_1) {
@@ -10211,14 +10186,14 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/utils"
         }
     };
 });
-System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-code", ["https://cdn.skypack.dev/@vanillawc/wc-codemirror@%5E1.4.1", "file:///home/awesomewaterapple/contributions/wc-code/src/console", "file:///home/awesomewaterapple/contributions/wc-code/src/language-details", "file:///home/awesomewaterapple/contributions/wc-code/src/utils", "file:///home/awesomewaterapple/contributions/wc-code/src/zone", "file:///home/awesomewaterapple/contributions/wc-code/src/main"], function (exports_9, context_9) {
+System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-code", ["https://unpkg.com/@vanillawc/wc-codemirror@1.9.1/index", "file:///home/awesomewaterapple/contributions/wc-code/src/console", "file:///home/awesomewaterapple/contributions/wc-code/src/language-details", "file:///home/awesomewaterapple/contributions/wc-code/src/utils", "file:///home/awesomewaterapple/contributions/wc-code/src/zone", "file:///home/awesomewaterapple/contributions/wc-code/src/main"], function (exports_8, context_8) {
     "use strict";
-    var wc_codemirror__5E1_4_1_1, console_js_1, language_details_js_1, Utils, zone_js_2, main_js_2;
-    var __moduleName = context_9 && context_9.id;
+    var index_js_1, console_js_1, language_details_js_1, Utils, zone_js_2, main_js_2;
+    var __moduleName = context_8 && context_8.id;
     return {
         setters: [
-            function (wc_codemirror__5E1_4_1_1_1) {
-                wc_codemirror__5E1_4_1_1 = wc_codemirror__5E1_4_1_1_1;
+            function (index_js_1_1) {
+                index_js_1 = index_js_1_1;
             },
             function (console_js_1_1) {
                 console_js_1 = console_js_1_1;
@@ -10237,8 +10212,8 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
             }
         ],
         execute: function () {
-            Utils.addCSSLinkIfRequired('./wc-code.css', context_9.meta.url);
-            main_js_2.default.WCCode = class extends wc_codemirror__5E1_4_1_1.WCCodeMirror {
+            Utils.addCSSLinkIfRequired('./wc-code.css', context_8.meta.url);
+            main_js_2.default.WCCode = class extends index_js_1.WCCodeMirror {
                 constructor() {
                     super();
                     this.elements = {};
@@ -10277,6 +10252,7 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                     this.loadingBar.setText('coding environment loading complete');
                     this.loadingBar.setDone();
                     this.elements.run.removeAttribute('disabled');
+                    this.resetEditorTheme();
                 }
                 checkLanguageExists() {
                     const language = this.getAttribute('mode');
@@ -10345,7 +10321,7 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                     if (theme) {
                         const base = 'https://codemirror.net/theme/';
                         const url = base + theme + '.css';
-                        Utils.addCSSLinkIfRequired(url, context_9.meta.url);
+                        Utils.addCSSLinkIfRequired(url, context_8.meta.url);
                     }
                 }
                 setKeyCombinations() {
@@ -10412,6 +10388,9 @@ System.register("file:///home/awesomewaterapple/contributions/wc-code/src/wc-cod
                     a.href = URL.createObjectURL(file);
                     a.download = filename;
                     a.click();
+                }
+                resetEditorTheme() {
+                    this.editor.setOption("mode", this.getAttribute("mode"));
                 }
             };
             window.WCCode = main_js_2.default;
