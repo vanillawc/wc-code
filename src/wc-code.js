@@ -1,5 +1,5 @@
 /* eslint no-undef: 0 */
-import {WCCodeMirror} from 'https://cdn.skypack.dev/@vanillawc/wc-codemirror@%5E1.4.1';
+import {WCCodeMirror} from 'https://unpkg.com/@vanillawc/wc-codemirror@1.9.1/index.js';
 import WCCodeConsole from './console.js'
 import languageDetails from './language-details.js'
 import * as Utils from './utils.js'

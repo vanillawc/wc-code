@@ -1,4 +1,4 @@
-import * as acorn from 'https://cdn.skypack.dev/acorn@%5E7.1.0';
+import * as acorn from 'https://unpkg.com/acorn@8.0.1/dist/acorn.mjs';
 
 /* eslint no-undef: 0 */
 // we're running javascript in javascript
