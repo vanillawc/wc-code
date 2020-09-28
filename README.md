@@ -12,10 +12,6 @@
 
 *Import from CDN*
 ```html
-<!-- bundled -->
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/build/index.js"></script>
-
-<!-- uses relative stuff -->
 <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/src/wc-code.js"></script>
 ```
 
@@ -48,7 +44,7 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 ```html
 <!DOCTYPE html>
 <head>
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/build/index.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/src/wc-code.js"></script>
 </head>
 <body>
   <wc-code mode="javascript">
@@ -66,7 +62,7 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 ```html
 <!DOCTYPE html>
 <head>
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/build/index.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/src/wc-code.js"></script>
 </head>
 <body>
   <wc-code mode="python">
@@ -83,7 +79,7 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 ```html
 <!DOCTYPE html>
 <head>
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/build/index.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/src/wc-code.js"></script>
 </head>
 <body>
   <wc-code mode="python" theme="monokai">
@@ -103,7 +99,7 @@ all language modes/themes are dynamically loaded, and the css is dynamically loa
 ```pug
 doctype html
 html(lang="en")
-  script(type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/build/index.min.js")
+  script(type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/src/wc-code.js")
 body
   wc-code(mode="javascript" theme="monokai")
     script(type="wc-content").

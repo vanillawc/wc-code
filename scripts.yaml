@@ -1,8 +1,0 @@
-# velociraptor scripts
-# see : https://github.com/umbopepato/velociraptor
-# scripts.yaml
-scripts:
-  build:
-    - deno bundle src/wc-code.js > build/index.js
-    - cp -r src/languages/ build/languages/
-    - cp src/wc-code.css build/
