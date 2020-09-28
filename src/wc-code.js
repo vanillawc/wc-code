@@ -62,6 +62,7 @@ WCCode.WCCode = class extends WCCodeMirror {
     this.loadingBar.setText('coding environment loading complete')
     this.loadingBar.setDone()
     this.elements.run.removeAttribute('disabled')
+    this.resetEditorTheme()
   }
 
   checkLanguageExists () {
@@ -150,7 +151,7 @@ WCCode.WCCode = class extends WCCodeMirror {
       const base = 'https://codemirror.net/theme/'
       const url = base + theme + '.css'
       Utils.addCSSLinkIfRequired(url, import.meta.url)
-    }
+    }  
   }
   
 
@@ -248,6 +249,14 @@ WCCode.WCCode = class extends WCCodeMirror {
     a.href = URL.createObjectURL(file)
     a.download = filename
     a.click()
+  }
+
+   /*
+    * Idk why this is required, but is sometimes the theming
+    * breaks without this
+    */
+  resetEditorTheme(){
+    this.editor.setOption("mode", this.getAttribute("mode"))
   }
 }
 
