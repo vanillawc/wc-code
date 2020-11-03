@@ -3,8 +3,13 @@ wc-code input[type="button"] {
 	border-radius: 3px;
 	margin: 5px 5px;
 	padding: 4px 18px;
-  background: white;
-  color: black;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+wc-code input[type=button]:hover{
+    background: #ccc;
 }
 
 
