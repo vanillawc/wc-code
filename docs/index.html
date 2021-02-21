@@ -6,24 +6,20 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-markdown@1/index.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@0.3.3/build/index.js"></script>
-    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
   </head>
   <body>
-    <header>
+    <style>
+        article{
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 700px;
+        }
+    </style>
+    <article>
       <h1>wc-code</h1>
       <p>cool ways to show code</p>
-    </header>
-    <article>
       <wc-markdown>
         <script type="wc-content">
-          # Note
-          this content was written in [new.css][new-css-link]
-          and with the help of [wc-markdown][wc-markdown-link]
-          
-          [new-css-link]: https://newcss.net/
-          [wc-markdown-link]: https://github.com/vanillawc/wc-markdown
-          
           # wc-code elements
           `<wc-code>` elements are elements that allow you to present your
           code with a rich feature of options
@@ -44,8 +40,7 @@
           var url = "https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,racist,sexist&format=txt"
           var resp = await fetch(url);
           var text = await resp.text();
-          console.log(text);
-          
+          console.log(text);      
         </script>
       </wc-code>
       <h3>Python usage -</h3>
@@ -54,8 +49,7 @@
         <script type="wc-content">
           a = 1
           b = 5
-          print(a, b, a+b)
-          
+          print(a, b, a+b) 
         </script>
       </wc-code>
       <wc-markdown highlight>

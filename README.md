@@ -12,7 +12,7 @@
 
 *Import from CDN*
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.3/src/wc-code.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-code@1.0.4/src/wc-code.js"></script>
 ```
 
 ## Usage NOTE

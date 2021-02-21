@@ -1,8 +1,14 @@
+wc-code{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
 wc-code input[type="button"] {
-	border: 1px solid grey;
-	border-radius: 3px;
-	margin: 5px 5px;
-	padding: 4px 18px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin: 5px 5px;
+    padding: 4px 18px;
     background: white;
     color: black;
     cursor: pointer;
