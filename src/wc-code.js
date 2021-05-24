@@ -95,7 +95,7 @@ WCCode.WCCode = class extends WCCodeMirror {
 
   async initLanguage () {
     this.loadingBar.setText('initializing language...')
-    if (!this.languageOptions.initilalized) {
+    if (!this.languageOptions.initialized) {
       // if the language has an init function,
       // init it !
       if (this.languageOptions.init) {
@@ -114,7 +114,7 @@ WCCode.WCCode = class extends WCCodeMirror {
   async initInterpreter () {
     // create the interpreter
     if (this.parentZoneElement) {
-      if (!this.parentZoneElement.initilalized) this.parentZoneElement.init()
+      if (!this.parentZoneElement.initialized) this.parentZoneElement.init()
     } else {
       const interpreter = new this.languageOptions.Interpreter(this.zone)
       this.zone.setInterpreter(interpreter)

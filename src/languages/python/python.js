@@ -47,7 +47,7 @@ ${webcomponent.value}`)
     }
 
     setPrintFn () {
-      pyodide.runPython(`
+      this.subInterpreter.run(`
 def print(*args):
     from js import WCCode
     zone = WCCode.zones.get(${this.zone.zoneId})
