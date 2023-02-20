@@ -2,17 +2,18 @@
 // we're running python in javascript,
 // we need pyiodide
 'use strict'
-window.languagePluginUrl = 'https://pyodide-cdn2.iodide.io/v0.15.0/full/'
+window.languagePluginUrl = 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/'
 
 WCCode.languages.python = {
   meta: { url: import.meta.url },
   fileExt: '.py',
   additionalScripts: [
-    'https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js'
+    'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/pyodide.js'
   ],
   async init () {
     await languagePluginLoader
     await pyodide.loadPackage(['micropip'])
+    await pyodide.loadPackage('numpy')
     this.subInterpreters = await import('./python-subinterpreters.js')
     this.subInterpreters.init()
   },
